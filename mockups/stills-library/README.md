@@ -30,3 +30,8 @@ The fatty15 Reverse Aging, Shaun T and Dr. Drew spots refused the embed download
 
 Before any of these go on a public page, confirm each client's case-study clause.
 Graza is unlisted on Vimeo, which may mean it is not cleared for public use yet.
+
+Added 2026-10-01 (hero swap): graza_family.jpg (Graza, 6.9s), mustela_pool.jpg (Mustela SPF
+30s Premium, 1202201748, 26.3s), openfarm_cat.jpg and openfarm_bed.jpg (Open Farm Turkey &
+Chicken, 21.3s and 23.8s). The homepage hero now uses graza_chef (left) and openfarm_cat
+(right): frames with empty space up top work best, because the hero copy sits at the top.

@@ -61,16 +61,16 @@ figure { margin: 0; }
 .nav .btn { padding: 11px 18px; font-size: 14px; }
 
 /* split hero: two full-bleed stills */
-.hero { position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); min-height: 800px; }
-.pane { position: relative; display: grid; align-items: end; color: var(--on-dark); isolation: isolate; overflow: clip; }
+.hero { position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); min-height: 760px; }
+.pane { position: relative; display: grid; align-items: start; color: var(--on-dark); isolation: isolate; overflow: clip; }
 .pane img.bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
-.pane::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(25,24,42,.30) 0%, rgba(25,24,42,0) 28%, rgba(25,24,42,0) 48%, rgba(25,24,42,.82) 100%); }
-.pane .in { padding: 0 clamp(28px, 4vw, 56px) 56px; display: grid; gap: 20px; }
+.pane::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(25,24,42,.82) 0%, rgba(25,24,42,.55) 34%, rgba(25,24,42,0) 60%, rgba(25,24,42,0) 88%, rgba(25,24,42,.25) 100%); }
+.pane .in { padding: 132px clamp(28px, 4vw, 56px) 0; display: grid; gap: 18px; }
 .pane .k { color: var(--on-dark-2); }
 .pane h1 { font-size: clamp(40px, 4.6vw, 66px); line-height: .98; max-width: 13ch; }
 .pane p { font-size: 17px; max-width: 36ch; color: var(--on-dark-2); }
-.pane-ads img.bg { object-position: 40% center; }
-.pane-reach img.bg { object-position: 30% center; }
+.pane-ads img.bg { object-position: 22% 70%; }
+.pane-reach img.bg { object-position: 58% center; }
 .pane-reach .k { color: var(--accent); }
 
 /* logo band */
@@ -180,6 +180,7 @@ figure { margin: 0; }
   .hero { grid-template-columns: 1fr; min-height: 0; }
   .pane { min-height: 560px; }
   .pane .in { padding-top: 96px; }
+  .pane { min-height: 620px; }
   .band .wrap, .platforms .wrap, .story .head, .results .wrap { grid-template-columns: 1fr; }
   .mosaic { grid-template-columns: 1fr; }
   .tile { min-height: 300px; }
@@ -208,7 +209,7 @@ figure { margin: 0; }
 
 <section class="hero">
   <div class="pane pane-ads" id="ads">
-    <img class="bg" src="{{c_graza_sauce}}" alt="Still from the Graza Signature ad">
+    <img class="bg" src="{{c_graza_chef_l}}" alt="Still from the Graza Signature ad">
     <div class="in">
       <div class="k">Screenbridge Ads</div>
       <h1>Bring the power of UGC to CTV.</h1>
@@ -217,7 +218,7 @@ figure { margin: 0; }
     </div>
   </div>
   <div class="pane pane-reach" id="reach">
-    <img class="bg" src="{{c_graza_line_l}}" alt="Still from the Graza Signature ad">
+    <img class="bg" src="{{c_openfarm_cat_l}}" alt="Still from the Open Farm Signature ad">
     <div class="in">
       <div class="k">Screenbridge Reach</div>
       <h1>Run CTV through Reach and the ads are free.</h1>
@@ -252,7 +253,7 @@ figure { margin: 0; }
     </div>
     <div class="mosaic">
       <div class="tile tile-ugc"><img src="{{c_fatty_ricki}}" alt="Creator clip from the fatty15 ad"><div class="cap"><div class="k">1 · Send</div><b>The clip already working on social.</b></div></div>
-      <div class="tile tile-ad"><img src="{{c_graza_chef}}" alt="The finished Graza CTV ad"><div class="cap"><div class="k">2 · Build</div><b>Rebuilt as a broadcast-ready spot.</b></div></div>
+      <div class="tile tile-ad"><img src="{{c_graza_table}}" alt="The finished Graza CTV ad"><div class="cap"><div class="k">2 · Build</div><b>Rebuilt as a broadcast-ready spot.</b></div></div>
       <div class="tile tile-air"><img src="{{c_tubby_jar}}" alt="Tubby Todd ad on air"><div class="cap"><div class="k">3 · Run</div><b>On air through Reach, with the ad included.</b></div></div>
     </div>
     <div class="arrowrow">
