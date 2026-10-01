@@ -128,6 +128,19 @@ p { margin: 0; }
 .reachd figure { margin: 0; aspect-ratio: 16 / 9; max-width: 100%; border-radius: var(--r); overflow: hidden; }
 .reachd figure img { width: 100%; height: 100%; object-fit: cover; }
 
+
+.why { background: var(--tint); }
+.why .wrap { padding-block: 110px; display: grid; gap: 48px; }
+.why .head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px; align-items: end; }
+.why .head .eyebrow { grid-column: 1 / -1; color: var(--brand); }
+.why h2 { font-size: clamp(36px, 4.8vw, 62px); line-height: 1.04; }
+.why .head p { font-size: 18px; color: var(--ink-2); max-width: 46ch; }
+.why .rows { display: grid; border-top: 1.5px solid var(--ink); }
+.why .rowi { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 32px; padding-block: 28px; border-bottom: 1px solid var(--line); }
+.why .rowi h3 { font-size: 26px; line-height: 1.15; max-width: 18ch; }
+.why .rowi p { font-size: 17px; color: var(--ink-2); max-width: 56ch; }
+.why .terms { max-width: 900px; }
+
 /* process */
 .process .wrap { padding-block: 120px; display: grid; gap: 56px; }
 .process h2 { font-size: clamp(38px, 5.2vw, 70px); line-height: 1.02; max-width: 16ch; }
@@ -188,7 +201,7 @@ p { margin: 0; }
 
 @media (max-width: 960px) {
   .nav ul { display: none; }
-  .split, .rgrid, .qgrid, .grid, .hero2 .wrap, .reachd .wrap { grid-template-columns: 1fr; }
+  .split, .rgrid, .qgrid, .grid, .hero2 .wrap, .why .head, .why .rowi { grid-template-columns: 1fr; }
   .half { min-height: 0; padding: 32px 28px 0; }
   .half figure { margin-inline: -28px; max-width: calc(100% + 56px); }
   .half-reach figure { margin-inline: -28px; }
@@ -229,7 +242,7 @@ p { margin: 0; }
     <div class="half half-reach" id="reach">
       <div class="k">Screenbridge Reach</div>
       <h1>Run CTV through Reach and the ads are free.</h1>
-      <p>Hand us the campaign. We plan the buy, run it on premium streaming inventory, and report what it did. The ads are included on every Reach plan. Month to month.</p>
+      <p>The creative is included in the media buy. No shoot, no agency, no guessing whether the ad will work. We build the spot, run the campaign, and keep improving the ad from what the campaign tells us.</p>
       <div class="ctas"><a class="btn btn-ink" href="#reach-detail">Plan a campaign <span class="arr"><svg viewBox="0 0 12 12"><path d="M2 6h8M6 2l4 4-4 4"/></svg></span></a></div>
       <figure><img src="{{carve}}" alt="Carve Designs ad still"></figure>
     </div>
@@ -242,8 +255,8 @@ p { margin: 0; }
     <div class="steps">
       <div class="step"><div class="k">1 · Send</div><h3>Send what is already working.</h3><p>A finished social ad or raw creator footage, your logo, and the call to action.</p><span class="tag">Ads</span></div>
       <div class="step"><div class="k">2 · Build</div><h3>We rebuild it for the big screen.</h3><p>Editors, designers, and motion graphics. You review at every milestone.</p><span class="tag">Ads</span></div>
-      <div class="step"><div class="k">3 · Plan</div><h3>We plan the buy from your brief.</h3><p>Audience, geography, and publishers, with a plan you approve before anything runs.</p><span class="tag">Reach</span></div>
-      <div class="step"><div class="k">4 · Run</div><h3>We launch, manage, and report.</h3><p>Pacing and delivery handled for you, with a flight report that says what the money did.</p><span class="tag">Reach</span></div>
+      <div class="step"><div class="k">3 · Plan</div><h3>We plan the buy around your goals.</h3><p>Audience, geography, networks, and programs, bought directly from supply. You approve the plan before anything runs.</p><span class="tag">Reach</span></div>
+      <div class="step"><div class="k">4 · Run and re-cut</div><h3>We run it, read the data, and improve the ad.</h3><p>Daily results turn into new cuts, new angles, and new concepts. The campaign teaches the creative.</p><span class="tag">Reach</span></div>
     </div>
   </div>
 </section>
@@ -276,20 +289,26 @@ p { margin: 0; }
   </div>
 </section>
 
-<section class="reachd" id="reach-detail">
+<section class="why" id="reach-detail">
   <div class="wrap">
-    <div class="col">
-      <div class="eyebrow">Screenbridge Reach</div>
-      <h2>The campaign, bought and run for you.</h2>
-      <p>A media plan from your brief: audience, geography, and publishers, approved by you before anything runs. Then pacing, delivery, and a flight report that says what the money did.</p>
-      <div class="terms">
-        <div><b>Ads included</b>Every Reach plan comes with the creative.</div>
-        <div><b>Month to month</b>No long-term contract.</div>
-        <div><b>Your plan, approved</b>Nothing runs until you have seen it.</div>
-      </div>
-      <div><a class="btn btn-ink" href="#">Plan a campaign <span class="arr"><svg viewBox="0 0 12 12"><path d="M2 6h8M6 2l4 4-4 4"/></svg></span></a></div>
+    <div class="head">
+      <div class="eyebrow">Why run CTV through Reach</div>
+      <h2>One team makes the ad, buys the TV, and learns from both.</h2>
+      <p>A media agency buys your CTV over here. A creative agency builds the ads over there. Your in-house team sits in between, trying to read a report that was never built for them. Reach removes the handoffs.</p>
     </div>
-    <figure><img src="{{fatty15}}" alt="fatty15 ad still"></figure>
+    <div class="rows">
+      <div class="rowi"><h3>The creative is in the media buy.</h3><p>No creative risk upfront. You get CTV-quality ads built to perform, honed across hundreds of spots, verticals, and brands, so we know what is working right now. You do not shoot, hire, or guess.</p></div>
+      <div class="rowi"><h3>The campaign teaches the creative.</h3><p>We run the campaign and read the results every day, week, and month. Then we turn them into variations, new angles, new messaging, and new concepts. Nothing is lost between the people buying the media and the people making the ad, because they are the same people.</p></div>
+      <div class="rowi"><h3>Bought directly from supply.</h3><p>Media is bought directly through Magnite. One exchange fee, one Screenbridge fee, and that is the whole price. Competitive CPMs you can actually see, with nothing hidden in the rate.</p></div>
+      <div class="rowi"><h3>The inventory you want, not the inventory you are given.</h3><p>Specific networks, programs, or premium placements through direct deals. Premium or budget, as the strategy calls for, because premium content tends to bring premium results. A media plan built around your goals and your creative, not a campaign switched on.</p></div>
+      <div class="rowi"><h3>Attribution you can act on.</h3><p>An Innovid pixel ties impressions to site visits and conversions, so the flight report says what the money did and what to change next.</p></div>
+    </div>
+    <div class="terms">
+      <div><b>Ads included</b>Every Reach plan comes with the creative.</div>
+      <div><b>Month to month</b>No long-term contract.</div>
+      <div><b>One price you can see</b>Exchange fee plus our fee. That is it.</div>
+    </div>
+    <div><a class="btn btn-ink" href="#">Plan a campaign <span class="arr"><svg viewBox="0 0 12 12"><path d="M2 6h8M6 2l4 4-4 4"/></svg></span></a></div>
   </div>
 </section>
 
@@ -308,7 +327,7 @@ p { margin: 0; }
   <div class="wrap">
     <div class="cta">
       <h2>Start with the ad, or start with the campaign.</h2>
-      <p class="mail">Book a 15‑minute intro call. We will walk you through both and tell you honestly which one you need first. Or write to <b>info@screenbridge.tv</b></p>
+      <p class="mail">Book a 15‑minute intro call. We will walk you through both and tell you which one you need first. Or write to <b>info@screenbridge.tv</b></p>
       <div class="ctas"><a class="btn btn-accent" href="#">Book a call <span class="arr"><svg viewBox="0 0 12 12"><path d="M2 6h8M6 2l4 4-4 4"/></svg></span></a><a class="btn btn-ghost" href="#">Plan a Reach campaign</a></div>
     </div>
     <div class="bottom">
