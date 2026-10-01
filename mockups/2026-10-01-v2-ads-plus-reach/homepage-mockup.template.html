@@ -2,12 +2,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
 <style>
-/* Hallmark · macrostructure: Split Hero (ads left, offer right) · nav: N9 edge-aligned · footer: Ft5 statement
- * theme: studied-DNA (source: https://www.frontrowgroup.com/en) · tokens LOCKED to the
- * Screenbridge Design System (design_system/colors_and_type.css) · accent: coral, offer band only
- * differs from v1 on: typographic hero (no full-bleed still), two-panel product split, brand-purple Reach panel
- * enrichment: real client ad stills · copy: site-verbatim claims + Tim's stated Reach terms (2026-09-29)
- * Hallmark · pre-emit critique: P4 H5 E4 S5 R4 V5 */
+/* Hallmark · macrostructure: Marquee Hero, split (two full-bleed stills: ads left, Reach offer right)
+ * nav: N9 edge-aligned · footer: Ft5 statement
+ * theme: studied-DNA (source: https://www.frontrowgroup.com/en) · tokens LOCKED to the Screenbridge
+ * Design System (design_system/colors_and_type.css) · accent: coral, logo band + one CTA
+ * v3 of this direction: image-led, text cut by ~60%, no competitor names, no prices
+ * Hallmark · pre-emit critique: P5 H5 E4 S5 R5 V5 */
 
 :root {
   --paper:      #FFFFFF;
@@ -21,15 +21,12 @@
   --on-dark:    #FFFFFF;
   --on-dark-2:  #D0D7E2;
   --accent:     #FF7F60;
-  --accent-2:   #FC512A;
   --brand:      #453DA4;
-  --brand-deep: #28274C;
   --font: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   --w: 1280px;
   --gutter: clamp(16px, 4vw, 56px);
   --pill: 9999px;
-  --r: 16px;
-  --r-lg: 28px;
+  --r: 20px;
   color-scheme: light;
 }
 * { box-sizing: border-box; }
@@ -39,8 +36,9 @@ img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
 h1, h2, h3 { margin: 0; font-weight: 600; font-style: normal; letter-spacing: -0.03em; text-wrap: balance; overflow-wrap: anywhere; min-width: 0; }
 p { margin: 0; }
+figure { margin: 0; }
 .wrap { max-width: var(--w); margin-inline: auto; padding-inline: var(--gutter); }
-.eyebrow { font-size: 13px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); }
+.k { font-size: 13px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; }
 .btn { display: inline-flex; align-items: center; gap: 10px; white-space: nowrap; padding: 14px 22px; border-radius: var(--pill); font-weight: 500; font-size: 15px; border: 1.5px solid transparent; transition: transform .18s cubic-bezier(.2,.7,.2,1); }
 .btn:hover { transform: translateY(-1px); }
 .btn:focus-visible { outline: 3px solid var(--brand); outline-offset: 3px; }
@@ -53,145 +51,123 @@ p { margin: 0; }
 .btn-ink .arr { background: var(--paper); } .btn-ink .arr svg { stroke: var(--ink); }
 .btn-paper .arr { background: var(--ink); } .btn-paper .arr svg { stroke: var(--paper); }
 .btn-accent .arr { background: var(--ink); } .btn-accent .arr svg { stroke: var(--paper); }
-.btn-ghost .arr { background: currentColor; } .btn-ghost .arr svg { stroke: var(--paper); }
 
-/* nav */
+/* nav over the hero */
+.nav { position: absolute; inset: 0 0 auto 0; z-index: 5; color: var(--on-dark); }
 .nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-block: 22px; }
-.nav .logo img { height: 26px; width: auto; }
+.nav .logo img { height: 26px; width: auto; filter: brightness(0) invert(1); }
 .nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 28px; font-size: 15px; font-weight: 500; }
 .nav ul li { white-space: nowrap; }
 .nav .btn { padding: 11px 18px; font-size: 14px; }
 
-/* hero: typographic */
-.hero .wrap { padding-block: 72px 56px; display: grid; gap: 28px; }
-.hero h1 { font-size: clamp(46px, 7.6vw, 112px); line-height: .96; max-width: 12ch; }
-.hero .row { display: flex; align-items: end; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
-.hero p { font-size: 20px; max-width: 44ch; color: var(--ink-2); }
-.hero .ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+/* split hero: two full-bleed stills */
+.hero { position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); min-height: 800px; }
+.pane { position: relative; display: grid; align-items: end; color: var(--on-dark); isolation: isolate; overflow: clip; }
+.pane img.bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+.pane::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(25,24,42,.30) 0%, rgba(25,24,42,0) 28%, rgba(25,24,42,0) 48%, rgba(25,24,42,.82) 100%); }
+.pane .in { padding: 0 clamp(28px, 4vw, 56px) 56px; display: grid; gap: 20px; }
+.pane .k { color: var(--on-dark-2); }
+.pane h1 { font-size: clamp(40px, 4.6vw, 66px); line-height: .98; max-width: 13ch; }
+.pane p { font-size: 17px; max-width: 36ch; color: var(--on-dark-2); }
+.pane-ads img.bg { object-position: 62% 18%; transform: scale(1.22); transform-origin: 55% 22%; }
+.pane-reach img.bg { object-position: 0% 0%; transform: scale(2.15); transform-origin: 6% 12%; }
+.pane-reach .k { color: var(--accent); }
 
-/* two products */
-.products .wrap { padding-block: 0 24px; }
-.split { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
-.panel { border-radius: var(--r-lg); overflow: hidden; display: grid; grid-template-rows: auto 1fr; min-height: 640px; isolation: isolate; }
-.panel .top { padding: 36px 36px 0; display: grid; gap: 14px; align-content: start; }
-.panel h2 { font-size: clamp(32px, 3.6vw, 48px); line-height: 1.02; }
-.panel .k { font-size: 13px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; }
-.panel p { font-size: 17px; max-width: 38ch; }
-.panel .ctas { display: flex; gap: 10px; flex-wrap: wrap; padding-top: 8px; }
-.panel figure { margin: 0; align-self: end; padding: 32px 0 0 36px; max-width: 100%; }
-.panel figure img { width: 100%; border-radius: var(--r) 0 0 0; aspect-ratio: 16 / 9; object-fit: cover; }
-.panel-ads { background: var(--inverse); color: var(--on-dark); }
-.panel-ads .k { color: var(--accent); }
-.panel-ads p { color: var(--on-dark-2); }
-.panel-reach { background: var(--tint); color: var(--ink); }
-.panel-reach .k { color: var(--brand); }
-.panel-reach p { color: var(--ink-2); }
-.panel-reach figure { padding: 32px 36px 36px; }
-.panel-reach figure img { border-radius: var(--r); }
-.terms { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; padding-top: 6px; }
-.terms div { border-top: 1.5px solid var(--ink); padding-top: 10px; font-size: 14px; line-height: 1.35; }
-.terms b { display: block; font-size: 18px; font-weight: 600; letter-spacing: -0.01em; }
+/* logo band */
+.band { background: var(--accent); color: var(--ink); }
+.band .wrap { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 40px; padding-block: 28px; }
+.band .label { font-size: 14px; font-weight: 500; white-space: nowrap; }
+.band .logos { display: flex; align-items: center; justify-content: space-between; gap: 36px; flex-wrap: wrap; }
+.band .logos img { height: 26px; width: auto; filter: brightness(0); opacity: .9; }
 
-/* offer band */
-.offer { background: var(--accent); color: var(--ink); }
-.offer .wrap { padding-block: 96px; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: 48px; align-items: end; }
-.offer h2 { font-size: clamp(40px, 5.8vw, 80px); line-height: 1.0; max-width: 14ch; }
-.offer .side { display: grid; gap: 18px; }
-.offer .side p { font-size: 19px; max-width: 36ch; }
-.offer .side small { display: block; font-size: 14px; max-width: 42ch; color: var(--ink-2); line-height: 1.5; }
+/* feed → ad → TV (dark) */
+.story { background: var(--inverse); color: var(--on-dark); }
+.story .wrap { padding-block: 120px; display: grid; gap: 64px; }
+.story .head { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: 40px; align-items: end; }
+.story h2 { font-size: clamp(40px, 5.6vw, 76px); line-height: 1.0; max-width: 13ch; }
+.story .head p { font-size: 18px; color: var(--on-dark-2); max-width: 36ch; }
+.mosaic { display: grid; grid-template-columns: minmax(0, .56fr) minmax(0, 1fr) minmax(0, 1fr); gap: 16px; align-items: stretch; }
+.tile { position: relative; border-radius: var(--r); overflow: hidden; background: #000; isolation: isolate; display: grid; align-items: end; min-height: 380px; }
+.tile img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; }
+.tile::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(25,24,42,0) 50%, rgba(25,24,42,.78) 100%); }
+.tile .cap { padding: 24px; display: grid; gap: 4px; }
+.tile .cap .k { color: var(--accent); }
+.tile .cap b { font-size: 22px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.15; }
+.tile-ugc img { object-position: 18% center; }
+.tile-air img { object-position: 45% center; transform: scale(1.25); transform-origin: 45% 60%; }
+.tile-ad img { object-position: 42% 30%; transform: scale(1.15); transform-origin: 42% 30%; }
+.arrowrow { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; border-top: 1px solid rgba(255,255,255,.18); padding-top: 28px; }
+.arrowrow div { display: grid; gap: 6px; }
+.arrowrow .k { color: var(--on-dark-2); }
+.arrowrow b { font-size: 18px; font-weight: 600; letter-spacing: -0.01em; }
 
-
-/* split hero: left = the ads (what the site says today), right = the offer */
-.hero2 .wrap { padding-block: 16px 24px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
-.half { border-radius: var(--r-lg); padding: 44px 44px 0; display: grid; gap: 18px; align-content: start; min-height: 760px; overflow: hidden; }
-.half .k { font-size: 13px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; }
-.half h1 { font-size: clamp(38px, 4.4vw, 62px); line-height: 1.0; max-width: 16ch; }
-.half p { font-size: 17px; max-width: 40ch; }
-.half .ctas { display: flex; gap: 10px; flex-wrap: wrap; padding-top: 6px; }
-.half figure { margin: 0; align-self: end; padding-top: 28px; margin-inline: -44px 0; max-width: calc(100% + 44px); }
-.half figure img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 0 var(--r) 0 0; }
-.half-ads { background: var(--inverse); color: var(--on-dark); }
-.half-ads .k { color: var(--accent); }
-.half-ads p { color: var(--on-dark-2); }
-.half-reach { background: var(--accent); color: var(--ink); }
-.half-reach .k { color: var(--ink); opacity: .75; }
-.half-reach p { color: var(--ink-2); }
-.half-reach figure { margin-inline: 0 -44px; }
-.half-reach figure img { border-radius: var(--r) 0 0 0; }
-.hero-note { text-align: center; font-size: 15px; color: var(--ink-3); padding-block: 8px 32px; }
-
-.reachd { background: var(--tint); }
-.reachd .wrap { padding-block: 110px; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 56px; align-items: center; }
-.reachd .col { display: grid; gap: 22px; }
-.reachd h2 { font-size: clamp(36px, 4.8vw, 62px); line-height: 1.04; }
-.reachd p { font-size: 18px; color: var(--ink-2); max-width: 44ch; }
-.reachd figure { margin: 0; aspect-ratio: 16 / 9; max-width: 100%; border-radius: var(--r); overflow: hidden; }
-.reachd figure img { width: 100%; height: 100%; object-fit: cover; }
-
-
-.why { background: var(--tint); }
-.why .wrap { padding-block: 110px; display: grid; gap: 48px; }
-.why .head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px; align-items: end; }
-.why .head .eyebrow { grid-column: 1 / -1; color: var(--brand); }
-.why h2 { font-size: clamp(36px, 4.8vw, 62px); line-height: 1.04; }
-.why .head p { font-size: 18px; color: var(--ink-2); max-width: 46ch; }
-.why .rows { display: grid; border-top: 1.5px solid var(--ink); }
-.why .rowi { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 32px; padding-block: 28px; border-bottom: 1px solid var(--line); }
-.why .rowi h3 { font-size: 26px; line-height: 1.15; max-width: 18ch; }
-.why .rowi p { font-size: 17px; color: var(--ink-2); max-width: 56ch; }
-.why .terms { max-width: 900px; }
-
-/* process */
-.process .wrap { padding-block: 120px; display: grid; gap: 56px; }
-.process h2 { font-size: clamp(38px, 5.2vw, 70px); line-height: 1.02; max-width: 16ch; }
-.steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--line); }
-.step { padding: 32px 28px 0 0; border-right: 1px solid var(--line); display: grid; gap: 12px; align-content: start; }
-.step:last-child { border-right: 0; }
-.step + .step { padding-left: 28px; }
-.step .k { font-size: 13px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--brand); }
-.step h3 { font-size: 23px; line-height: 1.15; }
-.step p { font-size: 15px; color: var(--ink-2); }
-.step .tag { display: inline-block; font-size: 12px; font-weight: 500; padding: 4px 10px; border-radius: var(--pill); background: var(--paper-2); color: var(--ink-2); width: max-content; }
-
-/* work */
-.work { background: var(--paper-2); }
-.work .wrap { padding-block: 110px; display: grid; gap: 40px; }
+/* selected ads */
+.work .wrap { padding-block: 120px 100px; display: grid; gap: 40px; }
 .work .head { display: flex; align-items: end; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
 .work h2 { font-size: clamp(36px, 4.6vw, 60px); line-height: 1.04; }
-.work .head p { color: var(--ink-2); max-width: 40ch; }
 .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px 24px; }
 .card { display: grid; gap: 14px; }
-.card figure { margin: 0; aspect-ratio: 16 / 9; max-width: 100%; overflow: hidden; border-radius: var(--r); background: var(--paper); }
+.card figure { aspect-ratio: 16 / 9; max-width: 100%; overflow: hidden; border-radius: var(--r); background: var(--paper-2); }
 .card figure img { width: 100%; height: 100%; object-fit: cover; }
 .card .brand { font-weight: 600; font-size: 18px; }
 .card .sub { font-size: 14px; color: var(--ink-3); }
-.card .res { font-size: 14px; color: var(--ink); font-weight: 500; }
+
+/* statement */
+.statement { background: var(--paper-2); }
+.statement .wrap { padding-block: 150px; display: grid; justify-items: center; text-align: center; gap: 36px; }
+.statement h2 { font-size: clamp(38px, 5.4vw, 72px); line-height: 1.04; max-width: 16ch; }
+.statement p { font-size: clamp(19px, 2vw, 24px); line-height: 1.45; max-width: 36ch; color: var(--ink-2); }
+.statement p b { font-weight: 600; color: var(--ink); }
+
+/* why reach: six quiet tiles */
+.why .wrap { padding-block: 120px; display: grid; gap: 48px; }
+.why .head { display: flex; align-items: end; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+.why h2 { font-size: clamp(36px, 4.6vw, 60px); line-height: 1.04; max-width: 14ch; }
+.why .head p { font-size: 18px; color: var(--ink-2); max-width: 40ch; }
+.tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.t { border-radius: var(--r); background: var(--tint); padding: 36px 32px; min-height: 320px; display: grid; align-content: space-between; gap: 32px; }
+.t .k { color: var(--brand); }
+.t h3 { font-size: clamp(26px, 2.4vw, 32px); line-height: 1.1; max-width: 13ch; }
+.t p { font-size: 16px; color: var(--ink-2); max-width: 30ch; }
+.t-dark { background: var(--ink); color: var(--on-dark); }
+.t-dark .k { color: var(--accent); }
+.t-dark p { color: var(--on-dark-2); }
+.t-img { position: relative; isolation: isolate; overflow: hidden; color: var(--on-dark); }
+.t-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; transform: scale(2); transform-origin: 10% 20%; }
+.t-img::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(25,24,42,.1) 0%, rgba(25,24,42,.85) 100%); }
+.t-img .k { color: var(--accent); }
+.t-img p { color: var(--on-dark-2); }
 
 /* results */
-.results .wrap { padding-block: 110px; display: grid; gap: 40px; }
-.results h2 { font-size: clamp(34px, 4.4vw, 56px); line-height: 1.04; max-width: 18ch; }
+.results { border-top: 1px solid var(--line); }
+.results .wrap { padding-block: 100px; display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 48px; align-items: start; }
+.results h2 { font-size: clamp(32px, 4vw, 48px); line-height: 1.06; max-width: 14ch; }
 .rgrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
-.r { border-top: 2px solid var(--ink); padding-top: 20px; display: grid; gap: 8px; }
+.r { border-top: 2px solid var(--ink); padding-top: 18px; display: grid; gap: 6px; }
 .r b { font-size: clamp(44px, 5vw, 64px); font-weight: 600; letter-spacing: -0.04em; line-height: 1; font-variant-numeric: tabular-nums; }
 .r span { font-size: 15px; color: var(--ink-2); }
-.r small { font-size: 13px; color: var(--ink-3); }
+.r small { font-size: 12px; color: var(--ink-3); }
 
-/* quotes */
-.quotes { border-top: 1px solid var(--line); }
-.quotes .wrap { padding-block: 100px; display: grid; gap: 44px; }
-.quotes h2 { font-size: clamp(32px, 4vw, 48px); line-height: 1.06; }
-.qgrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
-.q { border-top: 2px solid var(--ink); padding-top: 24px; display: grid; gap: 22px; align-content: space-between; }
-.q p { font-size: 19px; line-height: 1.45; }
-.q .who { display: grid; gap: 2px; font-size: 14px; }
-.q .who b { font-weight: 600; } .q .who span { color: var(--ink-3); }
+/* one quote */
+.quote { background: var(--paper-2); }
+.quote .wrap { padding-block: 130px; display: grid; justify-items: center; text-align: center; gap: 28px; }
+.quote p { font-size: clamp(26px, 3.2vw, 44px); line-height: 1.2; letter-spacing: -0.02em; font-weight: 500; max-width: 24ch; text-wrap: balance; }
+.quote .who { font-size: 15px; color: var(--ink-2); }
+.quote .who b { font-weight: 600; color: var(--ink); }
+
+/* platforms */
+.platforms { border-top: 1px solid var(--line); }
+.platforms .wrap { padding-block: 44px; display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 48px; }
+.platforms .label { font-size: 15px; font-weight: 500; max-width: 22ch; color: var(--ink-2); }
+.platforms .logos { display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
+.platforms .logos img { height: 28px; width: auto; filter: grayscale(1) brightness(0); opacity: .75; }
 
 /* footer */
 .foot { background: var(--inverse); color: var(--on-dark); }
 .foot .wrap { padding-block: 120px 40px; display: grid; gap: 72px; }
 .foot .cta { display: grid; gap: 28px; }
 .foot h2 { font-size: clamp(44px, 7vw, 100px); line-height: .98; max-width: 13ch; overflow-wrap: normal; }
-.foot .mail { font-size: 19px; color: var(--on-dark-2); max-width: 60ch; }
+.foot .mail { font-size: 19px; color: var(--on-dark-2); max-width: 52ch; }
 .foot .mail b { color: var(--on-dark); font-weight: 500; }
 .foot .ctas { display: flex; gap: 12px; flex-wrap: wrap; }
 .foot .bottom { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 32px; border-top: 1px solid rgba(255,255,255,.18); padding-top: 28px; font-size: 14px; color: var(--on-dark-2); }
@@ -201,16 +177,16 @@ p { margin: 0; }
 
 @media (max-width: 960px) {
   .nav ul { display: none; }
-  .split, .rgrid, .qgrid, .grid, .hero2 .wrap, .why .head, .why .rowi { grid-template-columns: 1fr; }
-  .half { min-height: 0; padding: 32px 28px 0; }
-  .half figure { margin-inline: -28px; max-width: calc(100% + 56px); }
-  .half-reach figure { margin-inline: -28px; }
-  .panel { min-height: 0; }
-  .offer .wrap { grid-template-columns: 1fr; }
-  .steps { grid-template-columns: 1fr; }
-  .step { border-right: 0; border-bottom: 1px solid var(--line); padding: 24px 0; }
-  .step + .step { padding-left: 0; }
-  .terms { grid-template-columns: 1fr; }
+  .hero { grid-template-columns: 1fr; min-height: 0; }
+  .pane { min-height: 560px; }
+  .pane .in { padding-top: 96px; }
+  .band .wrap, .platforms .wrap, .story .head, .results .wrap { grid-template-columns: 1fr; }
+  .mosaic { grid-template-columns: 1fr; }
+  .tile { min-height: 300px; }
+  .tile-ugc { aspect-ratio: 9 / 12; }
+  .arrowrow { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid, .tiles, .rgrid { grid-template-columns: 1fr; }
+  .t { min-height: 260px; }
   .foot .bottom { grid-template-columns: 1fr; text-align: center; justify-items: center; }
 }
 @media (prefers-reduced-motion: reduce) { .btn { transition: none; } }
@@ -226,37 +202,64 @@ p { margin: 0; }
       <li><a href="#how">How it works</a></li>
       <li><a href="#about">About</a></li>
     </ul>
-    <a class="btn btn-ink" href="#book">Book a call</a>
+    <a class="btn btn-accent" href="#book">Book a call</a>
   </div>
 </header>
 
-<section class="hero2">
-  <div class="wrap">
-    <div class="half half-ads" id="ads">
+<section class="hero">
+  <div class="pane pane-ads" id="ads">
+    <img class="bg" src="{{hero}}" alt="Still from the Wonderskin Signature ad">
+    <div class="in">
       <div class="k">Screenbridge Ads</div>
       <h1>Bring the power of UGC to CTV.</h1>
-      <p>Your best social ads, rebuilt by our editors into broadcast-quality spots for Roku, Hulu, YouTube, and Amazon. No shoot. First cut in 10 business days.</p>
-      <div class="ctas"><a class="btn btn-paper" href="#work">See the ads <span class="arr"><svg viewBox="0 0 12 12"><path d="M2 6h8M6 2l4 4-4 4"/></svg></span></a></div>
-      <figure><img src="{{sacheu}}" alt="Sacheu ad still"></figure>
+      <p>Your best social ads, rebuilt for the big screen. No shoot.</p>
+      <div><a class="btn btn-paper" href="#work">See the ads <span class="arr"><svg viewBox="0 0 12 12"><path d="M2 6h8M6 2l4 4-4 4"/></svg></span></a></div>
     </div>
-    <div class="half half-reach" id="reach">
+  </div>
+  <div class="pane pane-reach" id="reach">
+    <img class="bg" src="{{carve}}" alt="Still from the Carve Designs Signature ad">
+    <div class="in">
       <div class="k">Screenbridge Reach</div>
       <h1>Run CTV through Reach and the ads are free.</h1>
-      <p>The creative is included in the media buy. No shoot, no agency, no guessing whether the ad will work. We build the spot, run the campaign, and keep improving the ad from what the campaign tells us.</p>
-      <div class="ctas"><a class="btn btn-ink" href="#reach-detail">Plan a campaign <span class="arr"><svg viewBox="0 0 12 12"><path d="M2 6h8M6 2l4 4-4 4"/></svg></span></a></div>
-      <figure><img src="{{carve}}" alt="Carve Designs ad still"></figure>
+      <p>The creative is included in the media buy. We make the ad, run the campaign, and keep improving it.</p>
+      <div><a class="btn btn-paper" href="#how">Plan a campaign <span class="arr"><svg viewBox="0 0 12 12"><path d="M2 6h8M6 2l4 4-4 4"/></svg></span></a></div>
     </div>
   </div>
 </section>
 
-<section class="process" id="how">
+<section class="band" aria-label="Trusted by">
   <div class="wrap">
-    <h2>One team from your footage to the living room.</h2>
-    <div class="steps">
-      <div class="step"><div class="k">1 · Send</div><h3>Send what is already working.</h3><p>A finished social ad or raw creator footage, your logo, and the call to action.</p><span class="tag">Ads</span></div>
-      <div class="step"><div class="k">2 · Build</div><h3>We rebuild it for the big screen.</h3><p>Editors, designers, and motion graphics. You review at every milestone.</p><span class="tag">Ads</span></div>
-      <div class="step"><div class="k">3 · Plan</div><h3>We plan the buy around your goals.</h3><p>Audience, geography, networks, and programs, bought directly from supply. You approve the plan before anything runs.</p><span class="tag">Reach</span></div>
-      <div class="step"><div class="k">4 · Run and re-cut</div><h3>We run it, read the data, and improve the ad.</h3><p>Daily results turn into new cuts, new angles, and new concepts. The campaign teaches the creative.</p><span class="tag">Reach</span></div>
+    <div class="label">Trusted by</div>
+    <div class="logos">
+      <img src="{{harrys_l}}" alt="Harry's">
+      <img src="{{sacheu_l}}" alt="Sacheu">
+      <img src="{{mixbook_l}}" alt="Mixbook">
+      <img src="{{cheribundi_l}}" alt="Cheribundi">
+      <img src="{{fatty15_l}}" alt="fatty15">
+      <img src="{{dose_l}}" alt="Dose">
+      <img src="{{graza_l}}" alt="Graza">
+      <img src="{{smalls_l}}" alt="Smalls">
+      <img src="{{thirdlove_l}}" alt="ThirdLove">
+    </div>
+  </div>
+</section>
+
+<section class="story" id="how">
+  <div class="wrap">
+    <div class="head">
+      <h2>From the feed to the living room.</h2>
+      <p>One team makes the ad, buys the TV, and learns from both. What the campaign tells us becomes the next cut.</p>
+    </div>
+    <div class="mosaic">
+      <div class="tile tile-ugc"><img src="{{sacheu}}" alt="Creator clip"><div class="cap"><div class="k">1 · Send</div><b>The clip already working on social.</b></div></div>
+      <div class="tile tile-ad"><img src="{{hero}}" alt="The finished CTV ad"><div class="cap"><div class="k">2 · Build</div><b>Rebuilt as a broadcast-ready spot.</b></div></div>
+      <div class="tile tile-air"><img src="{{fatty15}}" alt="On air"><div class="cap"><div class="k">3 · Run</div><b>On air through Reach, with the ad included.</b></div></div>
+    </div>
+    <div class="arrowrow">
+      <div><div class="k">Send</div><b>Raw footage or a finished ad.</b></div>
+      <div><div class="k">Build</div><b>Editors, designers, motion graphics.</b></div>
+      <div><div class="k">Plan</div><b>A buy around your goals, approved by you.</b></div>
+      <div><div class="k">Learn</div><b>Daily results become new cuts.</b></div>
     </div>
   </div>
 </section>
@@ -264,16 +267,40 @@ p { margin: 0; }
 <section class="work" id="work">
   <div class="wrap">
     <div class="head">
-      <div><h2>Selected ads</h2></div>
-      <a class="btn btn-ghost" href="#">See all work <span class="arr"><svg viewBox="0 0 12 12"><path d="M2 6h8M6 2l4 4-4 4"/></svg></span></a>
+      <h2>Selected ads</h2>
+      <a class="btn btn-ghost" href="#">See all work <span class="arr" style="background:var(--ink)"><svg viewBox="0 0 12 12" stroke="#fff"><path d="M2 6h8M6 2l4 4-4 4"/></svg></span></a>
     </div>
     <div class="grid">
       <a class="card" href="#"><figure><img src="{{harrys}}" alt="Harry's ad still"></figure><div class="brand">Harry's</div><div class="sub">Body wash · 15-second Premium</div></a>
       <a class="card" href="#"><figure><img src="{{jonesroad}}" alt="Jones Road ad still"></figure><div class="brand">Jones Road</div><div class="sub">Beauty · 30-second Premium</div></a>
       <a class="card" href="#"><figure><img src="{{smalls}}" alt="Smalls ad still"></figure><div class="brand">Smalls</div><div class="sub">Pet food · 30-second Premium</div></a>
       <a class="card" href="#"><figure><img src="{{calpak}}" alt="Calpak ad still"></figure><div class="brand">Calpak</div><div class="sub">Travel · 30-second Premium</div></a>
-      <a class="card" href="#"><figure><img src="{{fatty15}}" alt="fatty15 ad still"></figure><div class="brand">fatty15</div><div class="sub">Supplements · 30-second Signature</div></a>
+      <a class="card" href="#"><figure><img src="{{sacheu}}" alt="Sacheu ad still"></figure><div class="brand">Sacheu</div><div class="sub">Beauty · 30-second Premium</div></a>
       <a class="card" href="#"><figure><img src="{{hero}}" alt="Wonderskin ad still"></figure><div class="brand">Wonderskin</div><div class="sub">Beauty · 15-second Signature</div></a>
+    </div>
+  </div>
+</section>
+
+<section class="statement">
+  <div class="wrap">
+    <h2>No creative risk. No handoffs.</h2>
+    <p>The ad is <b>built to perform</b> and <b>included in the media buy</b>. The team that runs your campaign is the team that makes your next cut.</p>
+  </div>
+</section>
+
+<section class="why">
+  <div class="wrap">
+    <div class="head">
+      <h2>Why run CTV through Reach</h2>
+      <p>Honed across hundreds of spots, verticals, and brands. We know what is working on TV right now.</p>
+    </div>
+    <div class="tiles">
+      <div class="t t-dark"><div class="k">Creative included</div><h3>The ad is in the buy.</h3><p>No shoot, no agency, no guessing. The creative stops being a line item.</p></div>
+      <div class="t"><div class="k">One price you can see</div><h3>Bought directly from supply.</h3><p>One exchange fee, one Screenbridge fee. That is the whole price.</p></div>
+      <div class="t t-img"><img src="{{carve}}" alt=""><div class="k">Your inventory</div><h3>The placements you want.</h3><p>Specific networks, programs, and premium placements through direct deals.</p></div>
+      <div class="t"><div class="k">The loop</div><h3>The campaign teaches the creative.</h3><p>Daily results turn into new angles, new messaging, and new concepts.</p></div>
+      <div class="t"><div class="k">Attribution</div><h3>See what the money did.</h3><p>A pixel ties impressions to visits and conversions, in a report built for you.</p></div>
+      <div class="t t-dark"><div class="k">Terms</div><h3>Month to month.</h3><p>Your plan, approved before anything runs. No long-term contract.</p></div>
     </div>
   </div>
 </section>
@@ -289,36 +316,22 @@ p { margin: 0; }
   </div>
 </section>
 
-<section class="why" id="reach-detail">
+<section class="quote">
   <div class="wrap">
-    <div class="head">
-      <div class="eyebrow">Why run CTV through Reach</div>
-      <h2>One team makes the ad, buys the TV, and learns from both.</h2>
-      <p>A media agency buys your CTV over here. A creative agency builds the ads over there. Your in-house team sits in between, trying to read a report that was never built for them. Reach removes the handoffs.</p>
-    </div>
-    <div class="rows">
-      <div class="rowi"><h3>The creative is in the media buy.</h3><p>No creative risk upfront. You get CTV-quality ads built to perform, honed across hundreds of spots, verticals, and brands, so we know what is working right now. You do not shoot, hire, or guess.</p></div>
-      <div class="rowi"><h3>The campaign teaches the creative.</h3><p>We run the campaign and read the results every day, week, and month. Then we turn them into variations, new angles, new messaging, and new concepts. Nothing is lost between the people buying the media and the people making the ad, because they are the same people.</p></div>
-      <div class="rowi"><h3>Bought directly from supply.</h3><p>Media is bought directly through Magnite. One exchange fee, one Screenbridge fee, and that is the whole price. Competitive CPMs you can actually see, with nothing hidden in the rate.</p></div>
-      <div class="rowi"><h3>The inventory you want, not the inventory you are given.</h3><p>Specific networks, programs, or premium placements through direct deals. Premium or budget, as the strategy calls for, because premium content tends to bring premium results. A media plan built around your goals and your creative, not a campaign switched on.</p></div>
-      <div class="rowi"><h3>Attribution you can act on.</h3><p>An Innovid pixel ties impressions to site visits and conversions, so the flight report says what the money did and what to change next.</p></div>
-    </div>
-    <div class="terms">
-      <div><b>Ads included</b>Every Reach plan comes with the creative.</div>
-      <div><b>Month to month</b>No long-term contract.</div>
-      <div><b>One price you can see</b>Exchange fee plus our fee. That is it.</div>
-    </div>
-    <div><a class="btn btn-ink" href="#">Plan a campaign <span class="arr"><svg viewBox="0 0 12 12"><path d="M2 6h8M6 2l4 4-4 4"/></svg></span></a></div>
+    <p>“Incredible speed, quality, and execution. Screenbridge turned around a high-performing CTV ad for us in just 48 hours.”</p>
+    <div class="who"><b>Lella Rafferty</b>, CMO, Cheribundi</div>
   </div>
 </section>
 
-<section class="quotes">
+<section class="platforms" aria-label="Where the ads run">
   <div class="wrap">
-    <h2>What clients say after the first spot.</h2>
-    <div class="qgrid">
-      <div class="q"><p>“Incredible speed, quality, and execution. Screenbridge turned around a high-performing CTV ad for us in just 48 hours.”</p><div class="who"><b>Lella Rafferty</b><span>CMO, Cheribundi</span></div></div>
-      <div class="q"><p>“A great partner and platform to work with. We turned around unique spots using our existing creative, which made it incredibly easy to test, learn, and iterate quickly.”</p><div class="who"><b>Leslie Albertson</b><span>Senior Director, Brand &amp; Creative, Mixbook</span></div></div>
-      <div class="q"><p>“Working with Screenbridge was seamless and highly collaborative. They transformed our footage into compelling CTV ads and high-performing video creative.”</p><div class="who"><b>Megan Schertz</b><span>Senior VP of Marketing, Sacheu</span></div></div>
+    <div class="label">One ad, cleared for every premium video touchpoint.</div>
+    <div class="logos">
+      <img src="{{hulu}}" alt="Hulu">
+      <img src="{{roku}}" alt="Roku">
+      <img src="{{firetv}}" alt="Fire TV">
+      <img src="{{appletv}}" alt="Apple TV">
+      <img src="{{youtube}}" alt="YouTube">
     </div>
   </div>
 </section>
@@ -327,12 +340,12 @@ p { margin: 0; }
   <div class="wrap">
     <div class="cta">
       <h2>Start with the ad, or start with the campaign.</h2>
-      <p class="mail">Book a 15‑minute intro call. We will walk you through both and tell you which one you need first. Or write to <b>info@screenbridge.tv</b></p>
+      <p class="mail">Book a 15‑minute intro call and we will tell you which one you need first. Or write to <b>info@screenbridge.tv</b></p>
       <div class="ctas"><a class="btn btn-accent" href="#">Book a call <span class="arr"><svg viewBox="0 0 12 12"><path d="M2 6h8M6 2l4 4-4 4"/></svg></span></a><a class="btn btn-ghost" href="#">Plan a Reach campaign</a></div>
     </div>
     <div class="bottom">
       <img src="{{logo}}" alt="Screenbridge">
-      <ul><li>Ads</li><li>Reach</li><li>Work</li><li>Pricing</li><li>About</li><li>Blog</li><li>Privacy</li></ul>
+      <ul><li>Ads</li><li>Reach</li><li>Work</li><li>About</li><li>Blog</li><li>Privacy</li></ul>
       <div>Screenbridge Inc. · New York</div>
     </div>
   </div>
