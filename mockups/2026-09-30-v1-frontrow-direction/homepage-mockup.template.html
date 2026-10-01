@@ -1,0 +1,331 @@
+<title>Screenbridge Homepage Mockup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
+<style>
+/* Hallmark · macrostructure: Marquee Hero · nav: N9 edge-aligned · footer: Ft5 statement
+ * theme: studied-DNA (source: https://www.frontrowgroup.com/en) · tokens LOCKED to the
+ * Screenbridge Design System (design_system/colors_and_type.css) · accent: coral, one band only
+ * enrichment: real client ad stills (no generated imagery) · copy: verbatim from screenbridge.tv
+ * Hallmark · pre-emit critique: P4 H5 E4 S5 R5 V4 */
+
+/* Layout: full-bleed still hero → one coral band → alternating white / ink / warm-grey bands,
+   every section a single huge headline + real imagery. Single light theme by choice. */
+:root {
+  --paper:      #FFFFFF;
+  --paper-2:    #F5F6F9;
+  --ink:        #19182A;
+  --ink-2:      #2E2C52;
+  --ink-3:      #8E9DB1;
+  --line:       #D0D7E2;
+  --inverse:    #12111D;
+  --on-dark:    #FFFFFF;
+  --on-dark-2:  #D0D7E2;
+  --accent:     #FF7F60;
+  --accent-2:   #FC512A;
+  --brand:      #453DA4;
+  --font: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --w: 1280px;
+  --gutter: clamp(16px, 4vw, 56px);
+  --pill: 9999px;
+  --r: 16px;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; overflow-x: clip; }
+body {
+  background: var(--paper); color: var(--ink);
+  font-family: var(--font); font-size: 17px; line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+h1, h2, h3 { margin: 0; font-weight: 600; font-style: normal; letter-spacing: -0.03em; text-wrap: balance; overflow-wrap: anywhere; min-width: 0; }
+p { margin: 0; }
+.wrap { max-width: var(--w); margin-inline: auto; padding-inline: var(--gutter); }
+.eyebrow { font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); }
+.btn {
+  display: inline-flex; align-items: center; gap: 10px; white-space: nowrap;
+  padding: 14px 22px; border-radius: var(--pill); font-weight: 500; font-size: 15px;
+  border: 1.5px solid transparent; transition: transform .18s cubic-bezier(.2,.7,.2,1), background .18s;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn:focus-visible { outline: 3px solid var(--brand); outline-offset: 3px; }
+.btn-ink { background: var(--ink); color: var(--on-dark); }
+.btn-paper { background: var(--paper); color: var(--ink); }
+.btn-ghost { border-color: currentColor; }
+.btn-accent { background: var(--accent); color: var(--ink); }
+.btn .arr { width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; background: currentColor; }
+.btn .arr svg { width: 11px; height: 11px; }
+.btn-ink .arr svg, .btn-accent .arr svg { stroke: var(--ink); }
+.btn-ink .arr { background: var(--paper); }
+.btn-paper .arr svg { stroke: var(--paper); }
+
+/* ---------- nav ---------- */
+.nav { position: absolute; inset: 0 0 auto 0; z-index: 5; }
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-block: 22px; }
+.nav .logo img { height: 26px; width: auto; filter: brightness(0) invert(1); }
+.nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 28px; font-size: 15px; font-weight: 500; color: var(--on-dark); }
+.nav ul li { white-space: nowrap; }
+.nav .btn { padding: 11px 18px; font-size: 14px; }
+
+/* ---------- hero ---------- */
+.hero { position: relative; min-height: 780px; display: grid; align-items: end; color: var(--on-dark); isolation: isolate; }
+.hero img.bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 62% 18%; transform: scale(1.24); transform-origin: 55% 22%; z-index: -2; }
+.hero { overflow: clip; }
+.hero::after { content: ""; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(180deg, rgba(25,24,42,.28) 0%, rgba(25,24,42,0) 30%, rgba(25,24,42,0) 45%, rgba(25,24,42,.78) 100%); }
+.hero .wrap { padding-block: 72px 64px; display: grid; gap: 28px; }
+.hero h1 { font-size: clamp(44px, 7.2vw, 104px); line-height: .98; max-width: 14ch; }
+.hero p { font-size: 19px; max-width: 46ch; color: var(--on-dark-2); }
+.hero .ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+.hero .reel { position: absolute; right: var(--gutter); top: 50%; transform: translateY(-50%);
+  display: flex; align-items: center; gap: 12px; font-size: 14px; font-weight: 500; }
+.hero .reel .play { width: 56px; height: 56px; border-radius: 50%; border: 1.5px solid rgba(255,255,255,.7); display: grid; place-items: center; backdrop-filter: blur(6px); }
+.hero .reel .play svg { width: 16px; height: 16px; margin-left: 3px; }
+
+/* ---------- logo band ---------- */
+.band { background: var(--accent); color: var(--ink); }
+.band .wrap { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 40px; padding-block: 28px; }
+.band .label { font-size: 14px; font-weight: 500; white-space: nowrap; }
+.band .logos { display: flex; align-items: center; justify-content: space-between; gap: 36px; flex-wrap: wrap; }
+.band .logos img { height: 26px; width: auto; filter: brightness(0); opacity: .9; }
+
+/* ---------- process (dark) ---------- */
+.process { background: var(--inverse); color: var(--on-dark); }
+.process .wrap { padding-block: 120px; display: grid; gap: 64px; }
+.process h2 { font-size: clamp(40px, 5.6vw, 76px); line-height: 1.02; max-width: 14ch; }
+.steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; border-top: 1px solid rgba(255,255,255,.18); }
+.step { padding: 36px 32px 0 0; border-right: 1px solid rgba(255,255,255,.18); display: grid; gap: 14px; align-content: start; }
+.step:last-child { border-right: 0; }
+.step + .step { padding-left: 32px; }
+.step .k { font-size: 13px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+.step h3 { font-size: 26px; line-height: 1.15; }
+.step p { color: var(--on-dark-2); font-size: 16px; max-width: 36ch; }
+
+/* ---------- work ---------- */
+.work .wrap { padding-block: 120px 96px; display: grid; gap: 40px; }
+.work .head { display: flex; align-items: end; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+.work h2 { font-size: clamp(36px, 4.6vw, 60px); line-height: 1.04; }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px 24px; }
+.card { display: grid; gap: 14px; }
+.card figure { margin: 0; aspect-ratio: 16 / 9; max-width: 100%; overflow: hidden; border-radius: var(--r); background: var(--paper-2); }
+.card figure img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s cubic-bezier(.2,.7,.2,1); }
+.card:hover figure img { transform: scale(1.03); }
+.card .meta { display: grid; gap: 4px; }
+.card .brand { font-weight: 600; font-size: 18px; letter-spacing: -0.01em; }
+.card .sub { font-size: 14px; color: var(--ink-3); }
+
+/* ---------- statement ---------- */
+.statement { background: var(--paper-2); }
+.statement .wrap { padding-block: 140px; display: grid; justify-items: center; text-align: center; gap: 36px; }
+.statement h2 { font-size: clamp(38px, 5.4vw, 72px); line-height: 1.04; max-width: 16ch; }
+.statement p { font-size: clamp(19px, 2vw, 24px); line-height: 1.45; max-width: 34ch; color: var(--ink-2); font-weight: 400; }
+.statement p b { font-weight: 600; color: var(--ink); }
+.statement .ctas { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+
+/* ---------- quotes ---------- */
+.quotes .wrap { padding-block: 110px; display: grid; gap: 48px; }
+.quotes h2 { font-size: clamp(32px, 4vw, 48px); line-height: 1.06; }
+.qgrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.q { border-top: 2px solid var(--ink); padding-top: 24px; display: grid; gap: 22px; align-content: space-between; }
+.q p { font-size: 19px; line-height: 1.45; letter-spacing: -0.005em; }
+.q .who { display: grid; gap: 2px; font-size: 14px; }
+.q .who b { font-weight: 600; }
+.q .who span { color: var(--ink-3); }
+
+/* ---------- platforms ---------- */
+.platforms { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.platforms .wrap { padding-block: 44px; display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 48px; }
+.platforms .label { font-size: 15px; font-weight: 500; max-width: 22ch; color: var(--ink-2); }
+.platforms .logos { display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
+.platforms .logos img { height: 28px; width: auto; filter: grayscale(1) brightness(0); opacity: .75; }
+
+/* ---------- reach ---------- */
+.reach .wrap { padding-block: 120px; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 56px; align-items: center; }
+.reach h2 { font-size: clamp(36px, 4.8vw, 62px); line-height: 1.04; }
+.reach p { font-size: 19px; color: var(--ink-2); max-width: 40ch; }
+.reach .col { display: grid; gap: 24px; }
+.reach figure { margin: 0; aspect-ratio: 16 / 9; max-width: 100%; border-radius: var(--r); overflow: hidden; }
+.reach figure img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ---------- footer ---------- */
+.foot { background: var(--inverse); color: var(--on-dark); }
+.foot .wrap { padding-block: 120px 40px; display: grid; gap: 72px; }
+.foot .cta { display: grid; gap: 28px; }
+.foot h2 { font-size: clamp(44px, 7vw, 100px); line-height: .98; max-width: 13ch; overflow-wrap: normal; }
+.foot .mail { font-size: 19px; color: var(--on-dark-2); }
+.foot .mail b { color: var(--on-dark); font-weight: 500; }
+.foot .bottom { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 32px; border-top: 1px solid rgba(255,255,255,.18); padding-top: 28px; font-size: 14px; color: var(--on-dark-2); }
+.foot .bottom img { height: 22px; width: auto; filter: brightness(0) invert(1); }
+.foot .bottom ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; }
+.foot .bottom ul li { white-space: nowrap; }
+
+@media (max-width: 900px) {
+  .nav ul { display: none; }
+  .hero { min-height: 640px; }
+  .hero .reel { display: none; }
+  .band .wrap, .platforms .wrap { grid-template-columns: 1fr; gap: 20px; }
+  .steps { grid-template-columns: 1fr; }
+  .step { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.18); padding: 28px 0; }
+  .step + .step { padding-left: 0; }
+  .grid, .qgrid { grid-template-columns: 1fr; }
+  .reach .wrap { grid-template-columns: 1fr; }
+  .foot .bottom { grid-template-columns: 1fr; text-align: center; justify-items: center; }
+}
+@media (prefers-reduced-motion: reduce) { .btn, .card figure img { transition: none; } }
+</style>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#" aria-label="Screenbridge"><img src="{{logo}}" alt="Screenbridge"></a>
+    <ul>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#packages">Packages</a></li>
+      <li><a href="#reach">Reach</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+    <a class="btn btn-accent" href="#book">Book a call</a>
+  </div>
+</header>
+
+<section class="hero">
+  <img class="bg" src="{{hero}}" alt="Still from the Wonderskin 15-second Signature ad">
+  <div class="reel"><span class="play"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 2l11 6-11 6z"/></svg></span>Watch the reel</div>
+  <div class="wrap">
+    <h1>Your best social ads. Rebuilt for TV.</h1>
+    <p>Screenbridge takes the UGC already performing on Meta and TikTok and turns it into broadcast-quality spots for Roku, Hulu, and YouTube. First cut in days.</p>
+    <div class="ctas">
+      <a class="btn btn-paper" href="#work">See the work <span class="arr"><svg viewBox="0 0 12 12" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6h8M6 2l4 4-4 4"/></svg></span></a>
+      <a class="btn btn-ghost" href="#book">Book a 15-minute call</a>
+    </div>
+  </div>
+</section>
+
+<section class="band" aria-label="Trusted by">
+  <div class="wrap">
+    <div class="label">Trusted by</div>
+    <div class="logos">
+      <img src="{{harrys_l}}" alt="Harry's">
+      <img src="{{sacheu_l}}" alt="Sacheu">
+      <img src="{{mixbook_l}}" alt="Mixbook">
+      <img src="{{cheribundi_l}}" alt="Cheribundi">
+      <img src="{{fatty15_l}}" alt="fatty15">
+      <img src="{{dose_l}}" alt="Dose">
+      <img src="{{graza_l}}" alt="Graza">
+      <img src="{{smalls_l}}" alt="Smalls">
+      <img src="{{thirdlove_l}}" alt="ThirdLove">
+    </div>
+  </div>
+</section>
+
+<section class="process" id="how">
+  <div class="wrap">
+    <h2>From the feed to the living room.</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="k">Send</div>
+        <h3>Send what is already working.</h3>
+        <p>A finished social ad or raw creator footage. Clean clips, your logo, brand guidelines, and the call to action you want featured.</p>
+      </div>
+      <div class="step">
+        <div class="k">Rebuild</div>
+        <h3>We rebuild it for the big screen.</h3>
+        <p>Editors, designers, and motion graphics from Filmkraft.tv. Sound, pacing, custom design, and a branded end card with a QR code or link. No templates.</p>
+      </div>
+      <div class="step">
+        <div class="k">Launch</div>
+        <h3>Launch on CTV, YouTube, and Amazon.</h3>
+        <p>You review at every milestone. Delivery from 10 business days, rush available. A worldwide, perpetual license on the final ad.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="work" id="work">
+  <div class="wrap">
+    <div class="head">
+      <h2>Selected work</h2>
+      <a class="btn btn-ghost" href="#">See all work <span class="arr" style="background:var(--ink)"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6h8M6 2l4 4-4 4"/></svg></span></a>
+    </div>
+    <div class="grid">
+      <a class="card" href="#"><figure><img src="{{sacheu}}" alt="Sacheu ad still"></figure><div class="meta"><div class="brand">Sacheu</div><div class="sub">Beauty · 30-second Premium</div></div></a>
+      <a class="card" href="#"><figure><img src="{{harrys}}" alt="Harry's ad still"></figure><div class="meta"><div class="brand">Harry's</div><div class="sub">Body wash · 15-second Premium</div></div></a>
+      <a class="card" href="#"><figure><img src="{{jonesroad}}" alt="Jones Road ad still"></figure><div class="meta"><div class="brand">Jones Road</div><div class="sub">Beauty · 30-second Premium</div></div></a>
+      <a class="card" href="#"><figure><img src="{{smalls}}" alt="Smalls ad still"></figure><div class="meta"><div class="brand">Smalls</div><div class="sub">Pet food · 30-second Premium</div></div></a>
+      <a class="card" href="#"><figure><img src="{{calpak}}" alt="Calpak ad still"></figure><div class="meta"><div class="brand">Calpak</div><div class="sub">Travel · 30-second Premium</div></div></a>
+      <a class="card" href="#"><figure><img src="{{carve}}" alt="Carve Designs ad still"></figure><div class="meta"><div class="brand">Carve Designs</div><div class="sub">Swim · 30-second Signature</div></div></a>
+    </div>
+  </div>
+</section>
+
+<section class="statement" id="packages">
+  <div class="wrap">
+    <h2>No shoot. No agency overhead.</h2>
+    <p>A broadcast-ready spot from footage you already own, with a <b>first cut in 10 business days</b>. Three packages, one price each, and you see it before we move forward.</p>
+    <div class="ctas">
+      <a class="btn btn-ink" href="#">See packages <span class="arr"><svg viewBox="0 0 12 12" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6h8M6 2l4 4-4 4"/></svg></span></a>
+      <a class="btn btn-ghost" href="#how">How it works</a>
+    </div>
+  </div>
+</section>
+
+<section class="quotes">
+  <div class="wrap">
+    <h2>What clients say after the first spot.</h2>
+    <div class="qgrid">
+      <div class="q">
+        <p>“Incredible speed, quality, and execution. Screenbridge turned around a high-performing CTV ad for us in just 48 hours.”</p>
+        <div class="who"><b>Lella Rafferty</b><span>CMO, Cheribundi</span></div>
+      </div>
+      <div class="q">
+        <p>“A great partner and platform to work with. We turned around unique spots using our existing creative, which made it incredibly easy to test, learn, and iterate quickly.”</p>
+        <div class="who"><b>Leslie Albertson</b><span>Senior Director, Brand &amp; Creative, Mixbook</span></div>
+      </div>
+      <div class="q">
+        <p>“Working with Screenbridge was seamless and highly collaborative. They transformed our footage into compelling CTV ads and high-performing video creative.”</p>
+        <div class="who"><b>Megan Schertz</b><span>Senior VP of Marketing, Sacheu</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="platforms" aria-label="Where the ads run">
+  <div class="wrap">
+    <div class="label">One ad, cleared for every premium video touchpoint.</div>
+    <div class="logos">
+      <img src="{{hulu}}" alt="Hulu">
+      <img src="{{roku}}" alt="Roku">
+      <img src="{{firetv}}" alt="Fire TV">
+      <img src="{{appletv}}" alt="Apple TV">
+      <img src="{{youtube}}" alt="YouTube">
+    </div>
+  </div>
+</section>
+
+<section class="reach" id="reach">
+  <div class="wrap">
+    <div class="col">
+      <div class="eyebrow">Screenbridge Reach</div>
+      <h2>Need the media too? We buy the CTV for you.</h2>
+      <p>Month to month, from $50 a day, no minimum spend. Test, learn, and scale packages, or a custom plan built around your brief.</p>
+      <div><a class="btn btn-ink" href="#">See Reach <span class="arr"><svg viewBox="0 0 12 12" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6h8M6 2l4 4-4 4"/></svg></span></a></div>
+    </div>
+    <figure><img src="{{fatty15}}" alt="fatty15 ad still"></figure>
+  </div>
+</section>
+
+<footer class="foot" id="book">
+  <div class="wrap">
+    <div class="cta">
+      <h2>Book a 15‑minute intro call.</h2>
+      <p class="mail">We will walk you through the process and answer any questions about turning your social ads into CTV-ready commercials. Or write to <b>info@screenbridge.tv</b></p>
+      <div><a class="btn btn-accent" href="#">Book a call <span class="arr"><svg viewBox="0 0 12 12" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6h8M6 2l4 4-4 4"/></svg></span></a></div>
+    </div>
+    <div class="bottom">
+      <img src="{{logo}}" alt="Screenbridge">
+      <ul><li>Work</li><li>Packages</li><li>Reach</li><li>About</li><li>Blog</li><li>Privacy</li></ul>
+      <div>Screenbridge Inc. · New York</div>
+    </div>
+  </div>
+</footer>
