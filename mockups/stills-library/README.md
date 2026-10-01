@@ -35,3 +35,7 @@ Added 2026-10-01 (hero swap): graza_family.jpg (Graza, 6.9s), mustela_pool.jpg (
 30s Premium, 1202201748, 26.3s), openfarm_cat.jpg and openfarm_bed.jpg (Open Farm Turkey &
 Chicken, 21.3s and 23.8s). The homepage hero now uses graza_chef (left) and openfarm_cat
 (right): frames with empty space up top work best, because the hero copy sits at the top.
+
+Hero right switched to fatty15 (Tim, 2026-10-01): fatty_signature_bottle.jpg, the 3200px
+Signature thumbnail from the Webflow export. All fatty15 Ricki Lake frames carry burned-in text.
+That half is now a light panel with ink type.

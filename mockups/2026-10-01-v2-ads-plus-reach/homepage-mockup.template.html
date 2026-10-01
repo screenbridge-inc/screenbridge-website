@@ -22,6 +22,10 @@
   --on-dark-2:  #D0D7E2;
   --accent:     #FF7F60;
   --brand:      #453DA4;
+  --nav-pill:   rgba(25,24,42,.62);
+  --wash:       rgba(240,239,234,.94);
+  --wash-2:     rgba(240,239,234,.78);
+  --wash-0:     rgba(240,239,234,0);
   --font: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   --w: 1280px;
   --gutter: clamp(16px, 4vw, 56px);
@@ -56,7 +60,7 @@ figure { margin: 0; }
 .nav { position: absolute; inset: 0 0 auto 0; z-index: 5; color: var(--on-dark); }
 .nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-block: 22px; }
 .nav .logo img { height: 26px; width: auto; filter: brightness(0) invert(1); }
-.nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 28px; font-size: 15px; font-weight: 500; }
+.nav ul { list-style: none; margin: 0; padding: 10px 24px; display: flex; gap: 28px; font-size: 15px; font-weight: 500; border-radius: var(--pill); background: var(--nav-pill); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
 .nav ul li { white-space: nowrap; }
 .nav .btn { padding: 11px 18px; font-size: 14px; }
 
@@ -70,8 +74,15 @@ figure { margin: 0; }
 .pane h1 { font-size: clamp(40px, 4.6vw, 66px); line-height: .98; max-width: 13ch; }
 .pane p { font-size: 17px; max-width: 36ch; color: var(--on-dark-2); }
 .pane-ads img.bg { object-position: 22% 70%; }
-.pane-reach img.bg { object-position: 58% center; }
+.pane-reach img.bg { object-position: 48% 70%; }
 .pane-reach .k { color: var(--accent); }
+
+
+/* fatty15 half: light panel, ink type over a cream wash */
+.pane-reach { color: var(--ink); }
+.pane-reach::after { background: linear-gradient(180deg, var(--wash) 0%, var(--wash-2) 46%, var(--wash-0) 66%); }
+.pane-reach p { color: var(--ink-2); }
+.pane-reach .k { color: var(--brand); }
 
 /* logo band */
 .band { background: var(--accent); color: var(--ink); }
@@ -218,12 +229,12 @@ figure { margin: 0; }
     </div>
   </div>
   <div class="pane pane-reach" id="reach">
-    <img class="bg" src="{{c_openfarm_cat_l}}" alt="Still from the Open Farm Signature ad">
+    <img class="bg" src="{{c_fatty_sig_l}}" alt="Still from the fatty15 Signature ad">
     <div class="in">
       <div class="k">Screenbridge Reach</div>
       <h1>Run CTV through Reach and the ads are free.</h1>
       <p>The creative is included in the media buy. We make the ad, run the campaign, and keep improving it.</p>
-      <div><a class="btn btn-paper" href="#how">Plan a campaign <span class="arr"><svg viewBox="0 0 12 12"><path d="M2 6h8M6 2l4 4-4 4"/></svg></span></a></div>
+      <div><a class="btn btn-ink" href="#how">Plan a campaign <span class="arr"><svg viewBox="0 0 12 12"><path d="M2 6h8M6 2l4 4-4 4"/></svg></span></a></div>
     </div>
   </div>
 </section>
