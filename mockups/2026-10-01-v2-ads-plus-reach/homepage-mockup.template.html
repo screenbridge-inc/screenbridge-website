@@ -69,8 +69,8 @@ figure { margin: 0; }
 .pane .k { color: var(--on-dark-2); }
 .pane h1 { font-size: clamp(40px, 4.6vw, 66px); line-height: .98; max-width: 13ch; }
 .pane p { font-size: 17px; max-width: 36ch; color: var(--on-dark-2); }
-.pane-ads img.bg { object-position: 62% 18%; transform: scale(1.22); transform-origin: 55% 22%; }
-.pane-reach img.bg { object-position: 0% 0%; transform: scale(2.15); transform-origin: 6% 12%; }
+.pane-ads img.bg { object-position: 40% center; }
+.pane-reach img.bg { object-position: 30% center; }
 .pane-reach .k { color: var(--accent); }
 
 /* logo band */
@@ -93,9 +93,9 @@ figure { margin: 0; }
 .tile .cap { padding: 24px; display: grid; gap: 4px; }
 .tile .cap .k { color: var(--accent); }
 .tile .cap b { font-size: 22px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.15; }
-.tile-ugc img { object-position: 18% center; }
-.tile-air img { object-position: 45% center; transform: scale(1.25); transform-origin: 45% 60%; }
-.tile-ad img { object-position: 42% 30%; transform: scale(1.15); transform-origin: 42% 30%; }
+.tile-ugc img { object-position: 11% center; }
+.tile-air img { object-position: 45% center; }
+.tile-ad img { object-position: 35% center; }
 .arrowrow { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; border-top: 1px solid rgba(255,255,255,.18); padding-top: 28px; }
 .arrowrow div { display: grid; gap: 6px; }
 .arrowrow .k { color: var(--on-dark-2); }
@@ -133,7 +133,7 @@ figure { margin: 0; }
 .t-dark .k { color: var(--accent); }
 .t-dark p { color: var(--on-dark-2); }
 .t-img { position: relative; isolation: isolate; overflow: hidden; color: var(--on-dark); }
-.t-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; transform: scale(2); transform-origin: 10% 20%; }
+.t-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 20% center; z-index: -2; }
 .t-img::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(25,24,42,.1) 0%, rgba(25,24,42,.85) 100%); }
 .t-img .k { color: var(--accent); }
 .t-img p { color: var(--on-dark-2); }
@@ -208,7 +208,7 @@ figure { margin: 0; }
 
 <section class="hero">
   <div class="pane pane-ads" id="ads">
-    <img class="bg" src="{{hero}}" alt="Still from the Wonderskin Signature ad">
+    <img class="bg" src="{{c_graza_sauce}}" alt="Still from the Graza Signature ad">
     <div class="in">
       <div class="k">Screenbridge Ads</div>
       <h1>Bring the power of UGC to CTV.</h1>
@@ -217,7 +217,7 @@ figure { margin: 0; }
     </div>
   </div>
   <div class="pane pane-reach" id="reach">
-    <img class="bg" src="{{carve}}" alt="Still from the Carve Designs Signature ad">
+    <img class="bg" src="{{c_graza_line_l}}" alt="Still from the Graza Signature ad">
     <div class="in">
       <div class="k">Screenbridge Reach</div>
       <h1>Run CTV through Reach and the ads are free.</h1>
@@ -251,9 +251,9 @@ figure { margin: 0; }
       <p>One team makes the ad, buys the TV, and learns from both. What the campaign tells us becomes the next cut.</p>
     </div>
     <div class="mosaic">
-      <div class="tile tile-ugc"><img src="{{sacheu}}" alt="Creator clip"><div class="cap"><div class="k">1 · Send</div><b>The clip already working on social.</b></div></div>
-      <div class="tile tile-ad"><img src="{{hero}}" alt="The finished CTV ad"><div class="cap"><div class="k">2 · Build</div><b>Rebuilt as a broadcast-ready spot.</b></div></div>
-      <div class="tile tile-air"><img src="{{fatty15}}" alt="On air"><div class="cap"><div class="k">3 · Run</div><b>On air through Reach, with the ad included.</b></div></div>
+      <div class="tile tile-ugc"><img src="{{c_fatty_ricki}}" alt="Creator clip from the fatty15 ad"><div class="cap"><div class="k">1 · Send</div><b>The clip already working on social.</b></div></div>
+      <div class="tile tile-ad"><img src="{{c_graza_chef}}" alt="The finished Graza CTV ad"><div class="cap"><div class="k">2 · Build</div><b>Rebuilt as a broadcast-ready spot.</b></div></div>
+      <div class="tile tile-air"><img src="{{c_tubby_jar}}" alt="Tubby Todd ad on air"><div class="cap"><div class="k">3 · Run</div><b>On air through Reach, with the ad included.</b></div></div>
     </div>
     <div class="arrowrow">
       <div><div class="k">Send</div><b>Raw footage or a finished ad.</b></div>
@@ -271,12 +271,12 @@ figure { margin: 0; }
       <a class="btn btn-ghost" href="#">See all work <span class="arr" style="background:var(--ink)"><svg viewBox="0 0 12 12" stroke="#fff"><path d="M2 6h8M6 2l4 4-4 4"/></svg></span></a>
     </div>
     <div class="grid">
-      <a class="card" href="#"><figure><img src="{{harrys}}" alt="Harry's ad still"></figure><div class="brand">Harry's</div><div class="sub">Body wash · 15-second Premium</div></a>
-      <a class="card" href="#"><figure><img src="{{jonesroad}}" alt="Jones Road ad still"></figure><div class="brand">Jones Road</div><div class="sub">Beauty · 30-second Premium</div></a>
-      <a class="card" href="#"><figure><img src="{{smalls}}" alt="Smalls ad still"></figure><div class="brand">Smalls</div><div class="sub">Pet food · 30-second Premium</div></a>
-      <a class="card" href="#"><figure><img src="{{calpak}}" alt="Calpak ad still"></figure><div class="brand">Calpak</div><div class="sub">Travel · 30-second Premium</div></a>
-      <a class="card" href="#"><figure><img src="{{sacheu}}" alt="Sacheu ad still"></figure><div class="brand">Sacheu</div><div class="sub">Beauty · 30-second Premium</div></a>
-      <a class="card" href="#"><figure><img src="{{hero}}" alt="Wonderskin ad still"></figure><div class="brand">Wonderskin</div><div class="sub">Beauty · 15-second Signature</div></a>
+      <a class="card" href="#"><figure><img src="{{c_graza_table}}" alt="Graza ad still"></figure><div class="brand">Graza</div><div class="sub">Olive oil · 30-second Signature</div></a>
+      <a class="card" href="#"><figure><img src="{{c_fatty_ricki}}" alt="fatty15 ad still"></figure><div class="brand">fatty15</div><div class="sub">Supplements · Ricki Lake, 30-second Premium</div></a>
+      <a class="card" href="#"><figure><img src="{{c_dose_flat_card}}" alt="Dose ad still"></figure><div class="brand">Dose</div><div class="sub">Wellness shot · 30-second Signature</div></a>
+      <a class="card" href="#"><figure><img src="{{c_cheri_pour}}" alt="Cheribundi ad still"></figure><div class="brand">Cheribundi</div><div class="sub">Tart cherry juice · 30-second Premium</div></a>
+      <a class="card" href="#"><figure><img src="{{c_openfarm_kibble}}" alt="Open Farm ad still"></figure><div class="brand">Open Farm</div><div class="sub">Pet food · 30-second Signature</div></a>
+      <a class="card" href="#"><figure><img src="{{c_emj_hand}}" alt="Every Man Jack ad still"></figure><div class="brand">Every Man Jack</div><div class="sub">Body wash · 30-second Signature</div></a>
     </div>
   </div>
 </section>
@@ -297,7 +297,7 @@ figure { margin: 0; }
     <div class="tiles">
       <div class="t t-dark"><div class="k">Creative included</div><h3>The ad is in the buy.</h3><p>No shoot, no agency, no guessing. The creative stops being a line item.</p></div>
       <div class="t"><div class="k">One price you can see</div><h3>Bought directly from supply.</h3><p>One exchange fee, one Screenbridge fee. That is the whole price.</p></div>
-      <div class="t t-img"><img src="{{carve}}" alt=""><div class="k">Your inventory</div><h3>The placements you want.</h3><p>Specific networks, programs, and premium placements through direct deals.</p></div>
+      <div class="t t-img"><img src="{{c_graza_grove}}" alt=""><div class="k">Your inventory</div><h3>The placements you want.</h3><p>Specific networks, programs, and premium placements through direct deals.</p></div>
       <div class="t"><div class="k">The loop</div><h3>The campaign teaches the creative.</h3><p>Daily results turn into new angles, new messaging, and new concepts.</p></div>
       <div class="t"><div class="k">Attribution</div><h3>See what the money did.</h3><p>A pixel ties impressions to visits and conversions, in a report built for you.</p></div>
       <div class="t t-dark"><div class="k">Terms</div><h3>Month to month.</h3><p>Your plan, approved before anything runs. No long-term contract.</p></div>
