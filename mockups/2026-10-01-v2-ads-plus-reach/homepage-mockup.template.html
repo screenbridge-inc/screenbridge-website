@@ -2,7 +2,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
 <style>
-/* Hallmark · macrostructure: Split Product Hero (two offers, one page) · nav: N9 edge-aligned · footer: Ft5 statement
+/* Hallmark · macrostructure: Split Hero (ads left, offer right) · nav: N9 edge-aligned · footer: Ft5 statement
  * theme: studied-DNA (source: https://www.frontrowgroup.com/en) · tokens LOCKED to the
  * Screenbridge Design System (design_system/colors_and_type.css) · accent: coral, offer band only
  * differs from v1 on: typographic hero (no full-bleed still), two-panel product split, brand-purple Reach panel
@@ -88,7 +88,7 @@ p { margin: 0; }
 .panel-reach p { color: var(--ink-2); }
 .panel-reach figure { padding: 32px 36px 36px; }
 .panel-reach figure img { border-radius: var(--r); }
-.terms { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; padding-top: 6px; }
+.terms { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; padding-top: 6px; }
 .terms div { border-top: 1.5px solid var(--ink); padding-top: 10px; font-size: 14px; line-height: 1.35; }
 .terms b { display: block; font-size: 18px; font-weight: 600; letter-spacing: -0.01em; }
 
@@ -99,6 +99,34 @@ p { margin: 0; }
 .offer .side { display: grid; gap: 18px; }
 .offer .side p { font-size: 19px; max-width: 36ch; }
 .offer .side small { display: block; font-size: 14px; max-width: 42ch; color: var(--ink-2); line-height: 1.5; }
+
+
+/* split hero: left = the ads (what the site says today), right = the offer */
+.hero2 .wrap { padding-block: 16px 24px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.half { border-radius: var(--r-lg); padding: 44px 44px 0; display: grid; gap: 18px; align-content: start; min-height: 760px; overflow: hidden; }
+.half .k { font-size: 13px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; }
+.half h1 { font-size: clamp(38px, 4.4vw, 62px); line-height: 1.0; max-width: 16ch; }
+.half p { font-size: 17px; max-width: 40ch; }
+.half .ctas { display: flex; gap: 10px; flex-wrap: wrap; padding-top: 6px; }
+.half figure { margin: 0; align-self: end; padding-top: 28px; margin-inline: -44px 0; max-width: calc(100% + 44px); }
+.half figure img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 0 var(--r) 0 0; }
+.half-ads { background: var(--inverse); color: var(--on-dark); }
+.half-ads .k { color: var(--accent); }
+.half-ads p { color: var(--on-dark-2); }
+.half-reach { background: var(--accent); color: var(--ink); }
+.half-reach .k { color: var(--ink); opacity: .75; }
+.half-reach p { color: var(--ink-2); }
+.half-reach figure { margin-inline: 0 -44px; }
+.half-reach figure img { border-radius: var(--r) 0 0 0; }
+.hero-note { text-align: center; font-size: 15px; color: var(--ink-3); padding-block: 8px 32px; }
+
+.reachd { background: var(--tint); }
+.reachd .wrap { padding-block: 110px; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 56px; align-items: center; }
+.reachd .col { display: grid; gap: 22px; }
+.reachd h2 { font-size: clamp(36px, 4.8vw, 62px); line-height: 1.04; }
+.reachd p { font-size: 18px; color: var(--ink-2); max-width: 44ch; }
+.reachd figure { margin: 0; aspect-ratio: 16 / 9; max-width: 100%; border-radius: var(--r); overflow: hidden; }
+.reachd figure img { width: 100%; height: 100%; object-fit: cover; }
 
 /* process */
 .process .wrap { padding-block: 120px; display: grid; gap: 56px; }
@@ -160,7 +188,10 @@ p { margin: 0; }
 
 @media (max-width: 960px) {
   .nav ul { display: none; }
-  .split, .rgrid, .qgrid, .grid { grid-template-columns: 1fr; }
+  .split, .rgrid, .qgrid, .grid, .hero2 .wrap, .reachd .wrap { grid-template-columns: 1fr; }
+  .half { min-height: 0; padding: 32px 28px 0; }
+  .half figure { margin-inline: -28px; max-width: calc(100% + 56px); }
+  .half-reach figure { margin-inline: -28px; }
   .panel { min-height: 0; }
   .offer .wrap { grid-template-columns: 1fr; }
   .steps { grid-template-columns: 1fr; }
@@ -186,56 +217,21 @@ p { margin: 0; }
   </div>
 </header>
 
-<section class="hero">
+<section class="hero2">
   <div class="wrap">
-    <h1>We make the ad. Then we put it on TV.</h1>
-    <div class="row">
-      <p>Screenbridge turns the social content already working for you into broadcast-quality CTV ads. Run the campaign through Screenbridge Reach, and the ads are included.</p>
-      <div class="ctas">
-        <a class="btn btn-ink" href="#ads">See the ads <span class="arr"><svg viewBox="0 0 12 12"><path d="M2 6h8M6 2l4 4-4 4"/></svg></span></a>
-        <a class="btn btn-ghost" href="#reach">How Reach works</a>
-      </div>
+    <div class="half half-ads" id="ads">
+      <div class="k">Screenbridge Ads</div>
+      <h1>Bring the power of UGC to CTV.</h1>
+      <p>Your best social ads, rebuilt by our editors into broadcast-quality spots for Roku, Hulu, YouTube, and Amazon. No shoot. First cut in 10 business days.</p>
+      <div class="ctas"><a class="btn btn-paper" href="#work">See the ads <span class="arr"><svg viewBox="0 0 12 12"><path d="M2 6h8M6 2l4 4-4 4"/></svg></span></a></div>
+      <figure><img src="{{sacheu}}" alt="Sacheu ad still"></figure>
     </div>
-  </div>
-</section>
-
-<section class="products">
-  <div class="wrap">
-    <div class="split">
-      <div class="panel panel-ads" id="ads">
-        <div class="top">
-          <div class="k">Screenbridge Ads</div>
-          <h2>The spot people come to us for.</h2>
-          <p>Your best UGC, rebuilt by editors and motion designers into a 15 or 30 second ad cleared for Roku, Hulu, YouTube, and Amazon. No shoot. First cut in 10 business days.</p>
-          <div class="ctas"><a class="btn btn-paper" href="#work">See the work <span class="arr"><svg viewBox="0 0 12 12"><path d="M2 6h8M6 2l4 4-4 4"/></svg></span></a><a class="btn btn-ghost" href="#">Packages</a></div>
-        </div>
-        <figure><img src="{{sacheu}}" alt="Sacheu ad still"></figure>
-      </div>
-      <div class="panel panel-reach" id="reach">
-        <div class="top">
-          <div class="k">Screenbridge Reach</div>
-          <h2>The CTV campaign, bought and run for you.</h2>
-          <p>Premium streaming inventory, planned and managed by our media team, with the reporting to show what it did. Suggested Test, Learn, and Scale packages, or a custom plan from your brief.</p>
-          <div class="terms">
-            <div><b>Month to month</b>No long-term contract.</div>
-            <div><b>From $50 a day</b>No minimum spend.</div>
-            <div><b>Ads included</b>On plans from $10K a month.</div>
-          </div>
-          <div class="ctas"><a class="btn btn-ink" href="#">Plan a campaign <span class="arr"><svg viewBox="0 0 12 12"><path d="M2 6h8M6 2l4 4-4 4"/></svg></span></a></div>
-        </div>
-        <figure><img src="{{carve}}" alt="Carve Designs ad still"></figure>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="offer">
-  <div class="wrap">
-    <h2>Run CTV through Reach and the ads are free.</h2>
-    <div class="side">
-      <p>Most brands find us for the creative. Keep the campaign with us too, and the creative stops being a line item.</p>
-      <small>Ads are included on Reach plans from $10,000 a month in media. Smaller plans welcome, with the ad priced as a package.</small>
-      <div><a class="btn btn-ink" href="#">See how it works <span class="arr"><svg viewBox="0 0 12 12"><path d="M2 6h8M6 2l4 4-4 4"/></svg></span></a></div>
+    <div class="half half-reach" id="reach">
+      <div class="k">Screenbridge Reach</div>
+      <h1>Run CTV through Reach and the ads are free.</h1>
+      <p>Hand us the campaign. We plan the buy, run it on premium streaming inventory, and report what it did. The ads are included on every Reach plan. Month to month.</p>
+      <div class="ctas"><a class="btn btn-ink" href="#reach-detail">Plan a campaign <span class="arr"><svg viewBox="0 0 12 12"><path d="M2 6h8M6 2l4 4-4 4"/></svg></span></a></div>
+      <figure><img src="{{carve}}" alt="Carve Designs ad still"></figure>
     </div>
   </div>
 </section>
@@ -277,6 +273,23 @@ p { margin: 0; }
       <div class="r"><b>-34%</b><span>CPA for fatty15 after the rebuild</span><small>Creative result, reported by the client</small></div>
       <div class="r"><b>2x</b><span>Return for Mixbook on existing creative</span><small>Creative result, reported by the client</small></div>
     </div>
+  </div>
+</section>
+
+<section class="reachd" id="reach-detail">
+  <div class="wrap">
+    <div class="col">
+      <div class="eyebrow">Screenbridge Reach</div>
+      <h2>The campaign, bought and run for you.</h2>
+      <p>A media plan from your brief: audience, geography, and publishers, approved by you before anything runs. Then pacing, delivery, and a flight report that says what the money did.</p>
+      <div class="terms">
+        <div><b>Ads included</b>Every Reach plan comes with the creative.</div>
+        <div><b>Month to month</b>No long-term contract.</div>
+        <div><b>Your plan, approved</b>Nothing runs until you have seen it.</div>
+      </div>
+      <div><a class="btn btn-ink" href="#">Plan a campaign <span class="arr"><svg viewBox="0 0 12 12"><path d="M2 6h8M6 2l4 4-4 4"/></svg></span></a></div>
+    </div>
+    <figure><img src="{{fatty15}}" alt="fatty15 ad still"></figure>
   </div>
 </section>
 
