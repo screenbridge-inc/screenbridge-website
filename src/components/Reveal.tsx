@@ -3,7 +3,7 @@ import { m, useInView, useReducedMotion } from "framer-motion";
 
 // Tasteful, lazy reveal. Server HTML is always fully visible; after hydration,
 // only sections still below the fold fade up once when scrolled to.
-export default function Reveal({ children, className }: { children: ReactNode; className?: string }) {
+export default function Reveal({ children, className, id }: { children: ReactNode; className?: string; id?: string }) {
   const ref = useRef<HTMLElement>(null);
   const inView = useInView(ref, { once: true, margin: "0px 0px -10% 0px" });
   const reduce = useReducedMotion();
@@ -21,12 +21,13 @@ export default function Reveal({ children, className }: { children: ReactNode; c
   return (
     <m.section
       ref={ref}
+      id={id}
       className={className}
       initial={false}
       animate={state}
       variants={{
-        hidden: { opacity: 0, y: 16, transition: { duration: 0 } },
-        shown: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+        hidden: { opacity: 0, y: 12, transition: { duration: 0 } },
+        shown: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
       }}
     >
       {children}

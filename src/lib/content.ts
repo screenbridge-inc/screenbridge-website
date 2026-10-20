@@ -14,7 +14,13 @@ export type PageMeta = {
   jsonld?: Record<string, unknown>[];
 };
 
-export type Page = PageMeta & { path: string; h1: string; sections: string[] };
+// One <section> per h2. `## Heading {.name}` gives the section a class; for the
+// classes in GROUPED, each h3 and what follows it becomes one card.
+export type Section = { html: string; cls: string; id: string };
+
+export type Page = PageMeta & { path: string; h1: string; sections: Section[] };
+
+const GROUPED = new Set(["channels", "tiers", "features", "team", "compare", "faq"]);
 
 const files = import.meta.glob("/content/**/*.md", { query: "?raw", import: "default", eager: true }) as Record<
   string,
@@ -37,7 +43,9 @@ function postProcess(html: string): string {
   return (
     html
       // [text](href){.cta} marks a call-to-action link
-      .replace(/<a href="([^"]*)">([\s\S]*?)<\/a>\{\.cta\}/g, '<a class="cta" href="$1">$2</a>')
+      .replace(/<a href="([^"]*)">((?:(?!<\/?a[ >])[\s\S])*?)<\/a>\{\.cta\}/g, '<a class="cta" href="$1">$2</a>')
+      // <p>Text {.name}</p> gives a paragraph a class (badges, eyebrows)
+      .replace(/<p>((?:(?!<\/?p>)[\s\S])*?)\s*\{\.([\w-]+)\}<\/p>/g, '<p class="$2">$1</p>')
       .replace(/<img /g, '<img loading="lazy" decoding="async" ')
       // runs of image-only paragraphs become one gallery row
       .replace(/(?:<p>(?:<img [^>]*>\s*)+<\/p>\s*){2,}/g, (run) => {
@@ -47,11 +55,38 @@ function postProcess(html: string): string {
   );
 }
 
-function splitSections(html: string): string[] {
+function slug(s: string): string {
+  return stripTags(s)
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
+function group(html: string, cls: string): string {
+  const [intro, ...items] = html.split(/(?=<h3[ >])/);
+  if (!items.length) return html;
+  const cards = items.map((item) => {
+    const m = item.match(/^(<h3[^>]*>[\s\S]*?<\/h3>)([\s\S]*)$/);
+    if (cls === "faq" && m) return `<details class="item"><summary>${m[1]}</summary>${m[2]}</details>`;
+    return `<article class="item">${item}</article>`;
+  });
+  return `${intro}<div class="items">${cards.join("")}</div>`;
+}
+
+function splitSections(html: string): Section[] {
   return html
     .split(/(?=<h2[ >])/)
     .map((s) => s.trim())
-    .filter(Boolean);
+    .filter(Boolean)
+    .map((s) => {
+      let cls = "";
+      s = s.replace(/^(<h2[^>]*>)([\s\S]*?)\s*\{\.([\w-]+)\}<\/h2>/, (_m, open, text, c) => {
+        cls = c;
+        return `${open}${text}</h2>`;
+      });
+      const h2 = s.match(/^<h2[^>]*>([\s\S]*?)<\/h2>/);
+      return { html: GROUPED.has(cls) ? group(s, cls) : s, cls, id: h2 ? slug(h2[1]) : "" };
+    });
 }
 
 function stripTags(s: string): string {

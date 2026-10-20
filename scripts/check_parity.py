@@ -44,6 +44,8 @@ def plain(md_line: str) -> str:
     s = re.sub(r"\[([^\]]*)\]\([^)]*\)(\{\.cta\})?", r"\1", s)
     s = re.sub(r"[*_`]+", "", s)
     s = re.sub(r"<!--.*?-->", "", s)
+    s = re.sub(r"\s*\{\.[\w-]+\}", "", s)  # {.class} markers (see src/lib/content.ts)
+    s = re.sub(r"^>\s?", "", s)  # blockquote markers
     return re.sub(r"\s+", " ", s).strip()
 
 

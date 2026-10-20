@@ -8,7 +8,8 @@ figure is replaced with a TODO comment until pricing is settled.
 
 Usage: python3 scripts/extract_webflow.py [--force]
 Existing content files are left alone unless --force is given, because the
-markdown is hand-edited after import.
+markdown is hand-edited after import. Files whose front matter says
+`hand_edited: true` (the designed pages) are never overwritten, even with --force.
 """
 import html
 import json
@@ -300,7 +301,7 @@ def main():
         report.append((stem, title, has_h1, prices, len(md)))
         target = OUT / (f"{coll}/sample.md" if template else f"{stem}.md")
         target.parent.mkdir(exist_ok=True)
-        if target.exists() and not force:
+        if target.exists() and (not force or "\nhand_edited: true\n" in target.read_text()):
             continue
         desc = meta(s, name="description") or meta(s, prop="og:description")
         if not desc:
