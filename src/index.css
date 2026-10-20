@@ -1,9 +1,57 @@
+/* Brand foundations (fonts, tokens, base type) are generated from the design system. */
+@import "./styles/tokens.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+/* Restraint over decoration: white space, one accent, Poppins weight contrast. */
+*, *::before, *::after { box-sizing: border-box; }
+img { display: block; }
+button { font: inherit; cursor: pointer; background: none; }
 
-body {
-  @apply bg-navy text-ink font-body;
+@layer components {
+  .wrap { @apply mx-auto w-full max-w-content px-5 md:px-8; }
+  .section { @apply py-12 md:py-20; }
+  .section-first { @apply pt-16 md:pt-24; }
+  .section h1 { color: var(--fg-1); max-width: 18ch; font-size: clamp(var(--text-3xl), 6vw, var(--text-5xl)); }
+  .section h2 { color: var(--brand); max-width: 24ch; font-size: clamp(var(--text-2xl), 4vw, var(--text-4xl)); }
+  .section h3 { font-size: clamp(var(--text-xl), 3vw, var(--text-3xl)); }
+  .section h3, .section h4 { color: var(--fg-1); }
+  .section ul, .section ol { @apply mb-4 pl-5; color: var(--fg-2); }
+  .section li { @apply mb-1; }
+  .section img { @apply h-auto max-w-full; border-radius: var(--radius-md); }
+  .section blockquote { @apply my-6 pl-5; border-left: 3px solid var(--accent); color: var(--fg-2); }
+  .gallery { @apply my-6 flex flex-wrap items-center gap-6; }
+  .gallery img { @apply h-10 w-auto md:h-12; border-radius: 0; }
+  .page > section + section { border-top: 1px solid var(--divider); }
+
+  .btn { @apply inline-flex items-center justify-center rounded-pill px-5 py-2.5 text-sm font-semibold; }
+  .btn-primary { background: var(--grad-neon-blue); color: var(--sb-white); box-shadow: var(--shadow-brand); }
+  .btn-ghost { color: var(--fg-1); border: 1px solid var(--border-strong); background: transparent; }
+  a.cta { @apply mr-3 inline-flex items-center rounded-pill px-5 py-2.5 text-sm; background: var(--grad-neon-blue); color: var(--sb-white); }
+
+  .skip { @apply absolute -top-20 left-4 z-50 rounded bg-white px-3 py-2; }
+  .skip:focus { @apply top-4; }
+
+  .site-header { @apply sticky top-0 z-40; background: color-mix(in srgb, var(--bg-app) 92%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--divider); }
+  .header-row { @apply flex items-center justify-between gap-6 py-4; }
+  .logo img { @apply h-6 w-auto; }
+  .menu-toggle { @apply rounded-pill px-4 py-2 text-sm font-semibold md:hidden; border: 1px solid var(--border-strong); color: var(--fg-1); }
+  .site-nav { @apply hidden items-center gap-6 text-sm md:flex; }
+  .site-nav a:not(.btn) { color: var(--fg-1); font-weight: var(--weight-medium); }
+  .site-nav a.active { color: var(--brand); }
+  .site-nav .nav-quiet { color: var(--fg-3) !important; }
+  .site-nav.open { @apply absolute inset-x-0 top-full flex flex-col items-start gap-4 px-5 py-6 md:static md:flex-row md:items-center md:p-0; background: var(--bg-app); border-bottom: 1px solid var(--divider); }
+
+  .site-footer { background: var(--grad-dark-blue); }
+  .site-footer a:not(.btn) { color: var(--fg-on-dark-2); font-weight: var(--weight-medium); }
+  .footer-grid { @apply grid gap-10 py-16 md:grid-cols-3; }
+  .footer-grid nav { @apply flex flex-col gap-3 text-sm; }
+  .footer-grid img { @apply mb-6 h-6 w-auto; }
+  .footer-base { @apply py-6 text-xs; color: var(--fg-on-dark-3); border-top: 1px solid var(--border-subtle); }
+
+  .consent { @apply fixed inset-x-4 bottom-4 z-50 mx-auto flex max-w-narrow flex-col gap-4 rounded-2xl p-5 md:flex-row md:items-center; background: var(--bg-elevated); box-shadow: var(--shadow-lg); border: 1px solid var(--border-subtle); }
+  .consent p { @apply m-0 text-sm; }
+  .consent-actions { @apply flex shrink-0 gap-3; }
 }
