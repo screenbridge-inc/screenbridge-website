@@ -24,6 +24,8 @@ OUT = ROOT / "src" / "data" / "work.json"
 DEFAULT_FINDER = Path.home() / "Code/screenbridge-agency/tools/screenbridge-showcase-catalog/find.py"
 TIERS = ("Standard", "Premium", "Signature")
 SKIP_FORMATS = {"Variant", "YouTube Cut"}
+# brands we have no permission to show publicly (Tim, 2026-10-21)
+EXCLUDE_BRANDS = {"M&M's"}
 LENGTH_PREF = {"30s": 0, "15s": 1, "60s": 2, "6s": 3}
 
 
@@ -67,6 +69,8 @@ def main() -> int:
     for v in sorted(spots, key=lambda v: (LENGTH_PREF.get(v.get("length"), 9), v.get("added", ""))):
         if v.get("spec") or not v.get("public", True):
             continue  # belt and braces: the finder already hides these
+        if v.get("company") in EXCLUDE_BRANDS:
+            continue
         if set(v.get("formats", [])) & SKIP_FORMATS:
             continue
         best.setdefault(key(v), v)

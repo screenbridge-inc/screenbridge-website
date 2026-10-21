@@ -34,7 +34,7 @@ jsonld: [
             "itemOffered": {
               "@type": "Service",
               "name": "Standard CTV Ad Production",
-              "description": "5 Days Delivery. Creative review sessions with CTV experts. Transform one finished social ad. Static custom designs + simple motion graphics. Royalty-free music + SFX. Branded end card with custom CTA."
+              "description": "5 Business Days Delivery. Creative review sessions with CTV experts. Transform one finished social ad. Static custom designs + simple motion graphics. Royalty-free music + SFX. Branded end card with custom CTA."
             }
           },
           {
@@ -44,7 +44,7 @@ jsonld: [
             "itemOffered": {
               "@type": "Service",
               "name": "Premium CTV Ad Production",
-              "description": "15 Days Delivery. Everything in Standard, plus transform your RAW UGC or creator material. Animated custom designs + advanced motion graphics. Custom-branded product illustrations. Additional creative strategist guidance."
+              "description": "15 Business Days Delivery. Everything in Standard, plus transform your RAW UGC or creator material. Animated custom designs + advanced motion graphics. Custom-branded product illustrations. Additional creative strategist guidance."
             }
           },
           {
@@ -54,7 +54,7 @@ jsonld: [
             "itemOffered": {
               "@type": "Service",
               "name": "Signature CTV Ad Production",
-              "description": "20 Days Delivery. Everything in Premium plus repurpose any footage. Free-form widescreen animations. Best-in-class storytelling + pacing that grabs attention. Persona + story-driven concepts."
+              "description": "20 Business Days Delivery. Everything in Premium plus repurpose any footage. Free-form widescreen animations. Best-in-class storytelling + pacing that grabs attention. Persona + story-driven concepts."
             }
           }
         ],
@@ -134,7 +134,7 @@ jsonld: [
           "name": "How long does it take to deliver my Screenbridge ad?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Timelines start once we've received all assets and approvals. Standard: 10 business days. Premium: 15 business days. Signature: 20 business days. Need it sooner? Rush options are available."
+            "text": "Timelines start once we've received all assets and approvals. Standard: 5 business days. Premium: 15 business days. Signature: 20 business days. Need it sooner? Rush options are available."
           }
         },
         {
@@ -265,6 +265,7 @@ The fastest, simplest way to launch UGC on CTV
 
 per 30-second ad {.per}
 
+- Delivered in 5 business days
 - Creative review sessions with our team of CTV experts
 - Transform one finished social ad
 - Static custom designs + simple motion graphics
@@ -283,6 +284,7 @@ Our most popular option to elevate your UGC into a premium TV-ready format
 
 per 30-second ad {.per}
 
+- Delivered in 15 business days
 - Everything in Standard, plus...
 - Transform your RAW UGC or creator material
 - Animated custom designs + advanced motion graphics
@@ -299,6 +301,7 @@ Make a splash with a hero ad built for brand awareness and long-term use
 
 per 30-second ad {.per}
 
+- Delivered in 20 business days
 - Everything in Premium plus...
 - Repurpose any footage
 - Free-form widescreen animations
@@ -307,7 +310,7 @@ per 30-second ad {.per}
 
 [Book Your Call](https://meetings.hubspot.com/screenbridge/screenbridge-call){.cta}
 
-## Meet the Screenbridge Dashboard {.dashboard}
+## Easy Project Management in the Screenbridge Dashboard {.dashboard}
 
 The first creative workflow built for performance CTV.
 
@@ -435,7 +438,7 @@ We can work from a finished social ad or raw creator footage, though raw footage
 
 ### How long does it take to deliver my Screenbridge ad?
 
-Timelines start once we’ve received all assets and approvals: Standard: 10 business days Premium: 15 business days Signature: 20 business days Need it sooner? Rush options are available.
+Timelines start once we’ve received all assets and approvals: Standard: 5 business days Premium: 15 business days Signature: 20 business days Need it sooner? Rush options are available.
 
 ### Can I use my Screenbridge ad on multiple platforms?
 
