@@ -5,12 +5,16 @@ import { TIERS, WORK, type Spot, type Tier } from "../lib/work";
 
 type Filter = "All" | Tier;
 const FILTERS: Filter[] = ["All", ...TIERS];
+// Phones show one card per row, so they get the grid in pages of this size.
+const PAGE = 12;
 
 // Filterable grid of every client spot. All cards are in the prerendered HTML;
-// ?tier=premium deep-links a filter.
+// ?tier=premium deep-links a filter. Below the sm breakpoint, cards past `limit`
+// are hidden with CSS (still in the HTML for crawlers) behind a "Load more" button.
 export default function WorkGrid() {
   const [filter, setFilter] = useState<Filter>("All");
   const [open, setOpen] = useState<Spot | null>(null);
+  const [limit, setLimit] = useState(PAGE);
   const close = useCallback(() => setOpen(null), []);
 
   useEffect(() => {
@@ -21,6 +25,7 @@ export default function WorkGrid() {
 
   const choose = (f: Filter) => {
     setFilter(f);
+    setLimit(PAGE);
     const url = new URL(window.location.href);
     if (f === "All") url.searchParams.delete("tier");
     else url.searchParams.set("tier", f.toLowerCase());
@@ -42,12 +47,22 @@ export default function WorkGrid() {
         Showing {shown.length} {filter === "All" ? "" : filter} ads
       </p>
       <ul className="vgrid" key={filter}>
-        {shown.map((s) => (
-          <li key={s.id}>
+        {shown.map((s, i) => (
+          <li key={s.id} data-more={i >= limit || undefined}>
             <VideoCard spot={s} onOpen={setOpen} />
           </li>
         ))}
       </ul>
+      {shown.length > limit && (
+        <div className="load-more">
+          <button type="button" className="btn btn-outline btn-lg" onClick={() => setLimit((n) => n + PAGE)}>
+            Load more ads
+          </button>
+          <p>
+            Showing {limit} of {shown.length}
+          </p>
+        </div>
+      )}
       <Lightbox spot={open} onClose={close} />
     </div>
   );

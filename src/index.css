@@ -259,6 +259,10 @@ button { font: inherit; cursor: pointer; background: none; }
   .filters button[aria-pressed="true"] { color: var(--sb-white); background: var(--bg-inverse); border-color: var(--bg-inverse); }
   .filters button[aria-pressed="true"] span { color: var(--fg-on-dark-2); }
   .work .vgrid { animation: fade-in .3s ease-out; }
+  .load-more { @apply mt-10 flex flex-col items-center gap-3; }
+  .load-more p { font-size: var(--text-sm); color: var(--fg-3); }
+  @media (max-width: 639px) { .work .vgrid > li[data-more] { display: none; } }
+  @media (min-width: 640px) { .load-more { display: none; } }
 
   /* lightbox */
   .lightbox { @apply fixed inset-0 z-[60] flex items-center justify-center p-4 md:p-10; background: color-mix(in srgb, var(--bg-inverse-2) 92%, transparent); animation: fade-in .2s ease-out; }
