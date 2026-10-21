@@ -1,12 +1,12 @@
 import ContentPage from "./ContentPage";
 import WorkGrid from "../components/WorkGrid";
-import { WORK, spotName } from "../lib/work";
+import { WORK, spotName, type Tier } from "../lib/work";
 import type { Page } from "../lib/content";
 
-// The CollectionPage JSON-LD in content/work.md gets one VideoObject per spot,
-// built from the same data as the grid.
-function withVideos(page: Page): Page {
-  const videos = WORK.map((s) => ({
+// The CollectionPage JSON-LD in content/work*.md gets one VideoObject per spot
+// shown, built from the same data as the grid.
+function withVideos(page: Page, tier?: Tier): Page {
+  const videos = (tier ? WORK.filter((s) => s.tier === tier) : WORK).map((s) => ({
     "@type": "VideoObject",
     name: `${spotName(s)} ${s.tier} CTV Ad`,
     description: `${s.length ? `${s.length} ` : ""}${s.tier} Screenbridge ad for ${spotName(s)}.`,
@@ -20,6 +20,12 @@ function withVideos(page: Page): Page {
   return { ...page, jsonld };
 }
 
-export default function WorkPage({ page }: { page: Page }) {
-  return <ContentPage page={page} meta={withVideos(page)} extra={(_s, i) => (i === 0 ? <WorkGrid /> : null)} />;
+export default function WorkPage({ page, tier }: { page: Page; tier?: Tier }) {
+  return (
+    <ContentPage
+      page={page}
+      meta={withVideos(page, tier)}
+      extra={(_s, i) => (i === 0 ? <WorkGrid key={tier ?? "all"} tier={tier} /> : null)}
+    />
+  );
 }

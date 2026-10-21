@@ -6,12 +6,15 @@ import HomePage from "./pages/HomePage";
 import WorkPage from "./pages/WorkPage";
 import NotFound from "./pages/NotFound";
 import { pages, type Page } from "./lib/content";
+import { TIERS } from "./lib/work";
 
 const loadFeatures = () => import("framer-motion").then((mod) => mod.domAnimation);
 
 function PageFor({ page }: { page: Page }) {
   if (page.path === "/") return <HomePage page={page} />;
   if (page.path === "/work") return <WorkPage page={page} />;
+  const tier = TIERS.find((t) => page.path === `/work-${t.toLowerCase()}`);
+  if (tier) return <WorkPage page={page} tier={tier} />;
   return <ContentPage page={page} />;
 }
 

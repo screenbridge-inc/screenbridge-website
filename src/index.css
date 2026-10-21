@@ -123,6 +123,7 @@ button { font: inherit; cursor: pointer; background: none; }
 
   /* video cards */
   .vgrid { @apply m-0 grid list-none gap-x-6 gap-y-10 p-0 sm:grid-cols-2 lg:grid-cols-3; }
+  .section .vgrid { padding-left: 0; margin-bottom: 0; }
   .vgrid li { @apply m-0; }
   .vgrid-featured { @apply mt-10; }
   .vcard { display: block; color: var(--fg-1); font-weight: var(--weight-regular); }
@@ -183,6 +184,29 @@ button { font: inherit; cursor: pointer; background: none; }
   }
   .sec-tiers a.cta { @apply mr-0 justify-center py-3; }
   .sec-tiers .item:not(:has(.badge)) a.cta { background: transparent; color: var(--brand-strong); border: 1px solid var(--border-brand); }
+
+  /* tier pages: what's included */
+  .sec-included .md {
+    @apply grid gap-x-16 gap-y-2 p-8 md:p-12; background: var(--grad-light-purple);
+    border: 1px solid var(--border-subtle); border-radius: var(--radius-2xl);
+  }
+  @media (min-width: 1024px) {
+    .sec-included .md { grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); }
+    .sec-included .md > h2, .sec-included .md > p, .sec-included .md > a.cta { grid-column: 1; }
+    .sec-included .md > ul { grid-column: 2; grid-row: 1 / span 4; align-self: center; }
+  }
+  .sec-included .md > p { max-width: 40ch; color: var(--fg-2); }
+  .sec-included .md > a.cta { justify-self: start; }
+  .sec-included ul { @apply m-0 list-none p-0; }
+  .sec-included li { @apply relative mb-4 pl-9; font-size: var(--text-base); color: var(--fg-1); }
+  .sec-included li:first-child { font-weight: var(--weight-semibold); }
+  .sec-included li::before {
+    content: ""; position: absolute; left: 0; top: 3px; width: 20px; height: 20px; background: var(--brand-strong);
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E") center / contain no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E") center / contain no-repeat;
+  }
+  /* tier pages compare two packages, not three */
+  .page[data-route^="/work-"] .sec-tiers .items { @apply lg:grid-cols-2; max-width: 860px; margin-left: auto; margin-right: auto; }
+  .page[data-route^="/work-"] .sec-tiers .per { @apply mt-auto; }
 
   /* dashboard */
   .sec-dashboard .md { @apply grid items-center gap-x-16; }
@@ -247,14 +271,24 @@ button { font: inherit; cursor: pointer; background: none; }
   .sec-faq details p { @apply pb-5 pr-10; }
 
   /* /work */
-  .page[data-route="/work"] .section-first h1 { max-width: 20ch; }
-  .page[data-route="/work"] .section-first .md > p:not(.eyebrow) { font-size: var(--text-lg); max-width: 52ch; }
+  .page[data-route^="/work"] .section-first h1 { max-width: 20ch; }
+  .page[data-route^="/work"] .section-first .md > p:not(.eyebrow) { font-size: var(--text-lg); max-width: 52ch; }
+  .eyebrow a { color: inherit; text-decoration: none; }
+  .eyebrow a:hover { text-decoration: underline; text-underline-offset: 3px; }
   .eyebrow { @apply mb-3; color: var(--brand); }
   .filters { @apply mb-10 mt-10 flex flex-wrap gap-2; }
   .filters button {
     @apply inline-flex items-center gap-2 rounded-pill px-4 py-2; font-size: var(--text-sm); font-weight: var(--weight-semibold);
     color: var(--fg-2); border: 1px solid var(--border-strong); transition: background .15s ease, color .15s ease;
   }
+  .filters a {
+    @apply inline-flex items-center gap-2 rounded-pill px-4 py-2; font-size: var(--text-sm); font-weight: var(--weight-semibold);
+    color: var(--fg-2); border: 1px solid var(--border-strong); text-decoration: none; transition: background .15s ease, color .15s ease;
+  }
+  .filters a:hover { background: var(--bg-subtle); }
+  .filters a span { font-size: var(--text-xs); font-weight: var(--weight-medium); color: var(--fg-3); }
+  .filters a[aria-current="page"] { color: var(--sb-white); background: var(--bg-inverse); border-color: var(--bg-inverse); }
+  .filters a[aria-current="page"] span { color: var(--fg-on-dark-2); }
   .filters button span { font-size: var(--text-xs); font-weight: var(--weight-medium); color: var(--fg-3); }
   .filters button[aria-pressed="true"] { color: var(--sb-white); background: var(--bg-inverse); border-color: var(--bg-inverse); }
   .filters button[aria-pressed="true"] span { color: var(--fg-on-dark-2); }
