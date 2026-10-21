@@ -34,7 +34,7 @@ jsonld: [
             "itemOffered": {
               "@type": "Service",
               "name": "Standard CTV Ad Production",
-              "description": "5 Business Days Delivery. Creative review sessions with CTV experts. Transform one finished social ad. Static custom designs + simple motion graphics. Royalty-free music + SFX. Branded end card with custom CTA."
+              "description": "10 Business Days Delivery. Creative review sessions with CTV experts. Transform one finished social ad. Static custom designs + simple motion graphics. Royalty-free music + SFX. Branded end card with custom CTA."
             }
           },
           {
@@ -134,7 +134,7 @@ jsonld: [
           "name": "How long does it take to deliver my Screenbridge ad?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Timelines start once we've received all assets and approvals. Standard: 5 business days. Premium: 15 business days. Signature: 20 business days. Need it sooner? Rush options are available."
+            "text": "Timelines start once we've received all assets and approvals. Standard: 10 business days. Premium: 15 business days. Signature: 20 business days. Need it sooner? Rush options are available."
           }
         },
         {
@@ -265,7 +265,7 @@ The fastest, simplest way to launch UGC on CTV
 
 per 30-second ad {.per}
 
-- Delivered in 5 business days
+- Delivered in 10 business days
 - Creative review sessions with our team of CTV experts
 - Transform one finished social ad
 - Static custom designs + simple motion graphics
@@ -438,7 +438,7 @@ We can work from a finished social ad or raw creator footage, though raw footage
 
 ### How long does it take to deliver my Screenbridge ad?
 
-Timelines start once we’ve received all assets and approvals: Standard: 5 business days Premium: 15 business days Signature: 20 business days Need it sooner? Rush options are available.
+Timelines start once we’ve received all assets and approvals: Standard: 10 business days Premium: 15 business days Signature: 20 business days Need it sooner? Rush options are available.
 
 ### Can I use my Screenbridge ad on multiple platforms?
 
