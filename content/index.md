@@ -274,6 +274,8 @@ per 30-second ad {.per}
 
 [Book Your Call](https://meetings.hubspot.com/screenbridge/screenbridge-call){.cta}
 
+[See Standard examples](/work-standard/){.tier-work}
+
 ### Premium
 
 Most Popular {.badge}
@@ -293,6 +295,8 @@ per 30-second ad {.per}
 
 [Book Your Call](https://meetings.hubspot.com/screenbridge/screenbridge-call){.cta}
 
+[See Premium examples](/work-premium/){.tier-work}
+
 ### Signature
 
 Make a splash with a hero ad built for brand awareness and long-term use
@@ -309,6 +313,8 @@ per 30-second ad {.per}
 - Persona + story-driven concepts
 
 [Book Your Call](https://meetings.hubspot.com/screenbridge/screenbridge-call){.cta}
+
+[See Signature examples](/work-signature/){.tier-work}
 
 ## Easy Project Management in the Screenbridge Dashboard {.dashboard}
 
