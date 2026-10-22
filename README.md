@@ -4,6 +4,12 @@ The new screenbridge.tv, on the Reach stack: React + Vite, prerendered to static
 HTML at build time (every route ships its head tags and body copy in the raw HTML),
 framer-motion for light motion, Tailwind for layout. Content is markdown in git.
 
+## Start here
+
+[docs/one-build-plan.md](docs/one-build-plan.md) is the single brief: settled
+decisions, page map, design rules, copy rules, clearance list and the phased
+steps. Mockups and the stills library are in [mockups/](mockups/README.md).
+
 ## Commands
 
 ```bash
