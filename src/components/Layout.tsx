@@ -1,7 +1,11 @@
 import { useState, type ReactNode } from "react";
 import { Link, NavLink } from "react-router-dom";
 import ConsentBanner from "./ConsentBanner";
-import { BOOK_CALL_URL, CONTACT_EMAIL, FOOTER_LINKS, LEGAL_LINKS, NAV, SIGN_IN_URL } from "../site";
+import { pageByPath } from "../lib/content";
+import { BOOK_CALL_URL, CONTACT_EMAIL, FACTS, FOOTER_LINKS, LEGAL_LINKS, NAV, SIGN_IN_URL } from "../site";
+
+// A link shows only once its page exists (see NAV in site.ts).
+const live = <T extends { to: string }>(links: T[]) => links.filter((l) => pageByPath.has(l.to));
 
 function Header() {
   const [open, setOpen] = useState(false);
@@ -21,7 +25,7 @@ function Header() {
           Menu
         </button>
         <nav id="site-nav" className={open ? "site-nav open" : "site-nav"} aria-label="Main">
-          {NAV.map((n) => (
+          {live(NAV).map((n) => (
             <NavLink key={n.to} to={n.to} onClick={() => setOpen(false)}>
               {n.label}
             </NavLink>
@@ -30,7 +34,7 @@ function Header() {
             Sign In
           </a>
           <a href={BOOK_CALL_URL} className="btn btn-primary">
-            Book Your Call
+            Book a call
           </a>
         </nav>
       </div>
@@ -44,15 +48,16 @@ function Footer() {
       <div className="wrap footer-grid">
         <div>
           <img src="/brand/horizontal-logo-light.png" alt="Screenbridge" width="168" height="25" loading="lazy" />
+          <p className="footer-facts">{FACTS}</p>
           <p>
             <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
           </p>
           <a href={BOOK_CALL_URL} className="btn btn-primary">
-            Book Your Call
+            Book a call
           </a>
         </div>
         <nav aria-label="Footer">
-          {FOOTER_LINKS.map((n) => (
+          {live(FOOTER_LINKS).map((n) => (
             <Link key={n.to} to={n.to}>
               {n.label}
             </Link>
