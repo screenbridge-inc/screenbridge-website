@@ -176,6 +176,17 @@ button { font: inherit; cursor: pointer; background: none; }
   .sec-why .item h3 + p { @apply mb-3; font-size: var(--text-2xl); font-weight: var(--weight-semibold); line-height: 1.15; letter-spacing: -0.02em; color: var(--fg-1); text-wrap: balance; }
   .sec-why .item p { color: var(--fg-2); }
   .sec-why .item p:last-child { @apply mb-0; }
+  .sec-why .items:has(> .item:nth-child(2):last-child) { @apply lg:grid-cols-2; }
+  .sec-why .item a { color: var(--brand); font-weight: var(--weight-semibold); }
+
+  /* homepage: Instant, the self-serve path, set apart from the done-for-you doors */
+  .sec-instant .md {
+    @apply flex flex-col items-start p-8 md:p-14; background: var(--sb-dark-blue-800); color: var(--sb-white); border-radius: var(--radius-2xl);
+  }
+  .sec-instant .md > h2 { color: var(--sb-white); max-width: 22ch; }
+  .sec-instant .md > p { font-size: var(--text-lg); color: rgba(255,255,255,.78); max-width: 52ch; }
+  .sec-instant .eyebrow { order: -1; @apply mb-4; font-size: var(--text-sm); text-transform: uppercase; letter-spacing: .08em; color: var(--accent) !important; }
+  .sec-instant a.cta { @apply mt-2; }
   /* Local price ladder (/for/local-businesses): four monthly budgets, the first carries the per-day line. */
   .sec-ladder { background: var(--bg-subtle); }
   .sec-ladder .md > p { font-size: var(--text-lg); color: var(--fg-2); max-width: 52ch; }
@@ -224,12 +235,12 @@ button { font: inherit; cursor: pointer; background: none; }
   .logos-platforms img[src*="Youtube"], .logos-platforms img[src*="Amazon"] { height: 52px; }
 
   /* oversized closing CTA */
-  .sec-close, .sec-close-reach { background: var(--bg-inverse); text-align: center; }
-  .sec-close h2, .sec-close-reach h2 { margin-inline: auto; max-width: 16ch !important; font-size: clamp(var(--text-4xl), 6.4vw, 5.5rem) !important; color: var(--fg-on-dark-1) !important; }
-  .sec-close .md > p, .sec-close-reach .md > p { margin-inline: auto; @apply mt-6; font-size: var(--text-lg); color: var(--fg-on-dark-2); max-width: 46ch; }
-  .sec-close .md a, .sec-close-reach .md a { color: var(--fg-on-dark-1); text-decoration: underline; text-underline-offset: 3px; }
+  .sec-close, .sec-close-reach, .sec-close-instant { background: var(--bg-inverse); text-align: center; }
+  .sec-close h2, .sec-close-reach h2, .sec-close-instant h2 { margin-inline: auto; max-width: 16ch !important; font-size: clamp(var(--text-4xl), 6.4vw, 5.5rem) !important; color: var(--fg-on-dark-1) !important; }
+  .sec-close .md > p, .sec-close-reach .md > p, .sec-close-instant .md > p { margin-inline: auto; @apply mt-6; font-size: var(--text-lg); color: var(--fg-on-dark-2); max-width: 46ch; }
+  .sec-close .md a, .sec-close-reach .md a, .sec-close-instant .md a { color: var(--fg-on-dark-1); text-decoration: underline; text-underline-offset: 3px; }
   .close-ctas { @apply mt-12 flex flex-wrap justify-center gap-3; }
-  .sec-close .btn-outline, .sec-close-reach .btn-outline { color: var(--fg-on-dark-1); border-color: color-mix(in srgb, var(--sb-white) 40%, transparent); }
+  .sec-close .btn-outline, .sec-close-reach .btn-outline, .sec-close-instant .btn-outline { color: var(--fg-on-dark-1); border-color: color-mix(in srgb, var(--sb-white) 40%, transparent); }
 
   /* channel strip */
   .sec-channels { background: var(--bg-subtle); @apply py-10 md:py-14; }

@@ -1,5 +1,5 @@
 import FeaturedWork from "./FeaturedWork";
-import { BOOK_CALL_URL, CONTACT_EMAIL, REACH_URL } from "../site";
+import { BOOK_CALL_URL, CONTACT_EMAIL, INSTANT_ACCESS_URL, REACH_URL } from "../site";
 import { PICKS } from "../lib/work";
 import type { Section } from "../lib/content";
 
@@ -122,6 +122,18 @@ export function sectionExtra(s: Section) {
         </a>
         <a href={`mailto:${CONTACT_EMAIL}`} className="btn btn-outline btn-lg">
           Email us
+        </a>
+      </div>
+    );
+  // Instant (draft): early access leads, the call follows.
+  if (s.cls === "close-instant")
+    return (
+      <div className="close-ctas">
+        <a href={INSTANT_ACCESS_URL} className="btn btn-primary btn-lg">
+          Get early access
+        </a>
+        <a href={BOOK_CALL_URL} className="btn btn-outline btn-lg">
+          Book a call
         </a>
       </div>
     );

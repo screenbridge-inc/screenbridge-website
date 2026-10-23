@@ -8,10 +8,14 @@ export const CONTACT_EMAIL = "info@screenbridge.tv";
 
 // Six items, no dropdowns (docs/one-build-plan.md section 3). Layout shows a link only once its
 // page exists, so the doors light up as each Phase 2 step lands instead of linking to a 404.
+// Instant is in early access: the CTA is a mailto until a signup page exists.
+export const INSTANT_ACCESS_URL = "mailto:info@screenbridge.tv?subject=Screenbridge%20Instant%20early%20access";
+
 export const NAV = [
   { to: "/creative", label: "Creative" },
   { to: "/performance-plan", label: "Performance Plan" },
   { to: "/reach", label: "Reach" },
+  { to: "/instant", label: "Instant" },
   { to: "/work", label: "Work" },
   { to: "/about", label: "About" },
 ];
