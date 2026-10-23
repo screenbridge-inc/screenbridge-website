@@ -22,7 +22,7 @@ EXTS = {".md", ".ts", ".tsx", ".json", ".html"}
 # Legal pages quote contract language verbatim; only the brand rules apply there.
 LEGAL = {"content/terms-conditions.md", "content/privacy-policy.md", "content/ugc-ad-checker-terms-conditions.md"}
 # The homepage and the three door pages carry no competitor name.
-DOORS = {"content/index.md", "content/creative.md", "content/performance-plan.md", "content/reach.md"}
+DOORS = {"content/index.md", "content/creative.md", "content/reach.md", "content/instant.md"}
 # The local ladder is the one page with dollar figures (Tim, 2026-10-23). Every other rule applies.
 ALLOW_DOLLARS = {"content/for/local-businesses.md"}
 
