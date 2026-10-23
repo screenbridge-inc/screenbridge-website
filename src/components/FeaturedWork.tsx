@@ -2,12 +2,12 @@ import { useCallback, useState } from "react";
 import { Link } from "react-router-dom";
 import Lightbox from "./Lightbox";
 import VideoCard from "./VideoCard";
-import { FEATURED, findSpot, type Spot } from "../lib/work";
+import { FEATURED, findSpot, type Spot, type Tier } from "../lib/work";
 
-export default function FeaturedWork() {
+export default function FeaturedWork({ picks = FEATURED }: { picks?: [string, Tier, string?][] }) {
   const [open, setOpen] = useState<Spot | null>(null);
   const close = useCallback(() => setOpen(null), []);
-  const spots = FEATURED.map(([b, t, c]) => findSpot(b, t, c)).filter((s): s is Spot => !!s);
+  const spots = picks.map(([b, t, c]) => findSpot(b, t, c)).filter((s): s is Spot => !!s);
   return (
     <>
       <ul className="vgrid vgrid-featured">

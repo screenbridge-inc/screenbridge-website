@@ -24,7 +24,7 @@ export type Section = { html: string; cls: string; id: string };
 
 export type Page = PageMeta & { path: string; h1: string; sections: Section[] };
 
-const GROUPED = new Set(["channels", "tiers", "features", "team", "compare", "faq", "doors", "stats", "frames", "why", "loop"]);
+const GROUPED = new Set(["channels", "tiers", "features", "team", "compare", "faq", "doors", "stats", "frames", "why", "loop", "ladder", "facts"]);
 
 const files = import.meta.glob("/content/**/*.md", { query: "?raw", import: "default", eager: true }) as Record<
   string,

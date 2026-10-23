@@ -50,6 +50,25 @@ export const FEATURED: [string, Tier, string?][] = [
   ["The Sculpt Society", "Standard"],
 ];
 
+// Three ads per "who it is for" page, keyed by the section class (`## ... {.ads-dtc}`).
+export const PICKS: Record<string, [string, Tier, string?][]> = {
+  "ads-dtc": [
+    ["Fatty15", "Premium", "Shaun T"],
+    ["Mixbook", "Premium", "Story Mode · Green Screen"],
+    ["Carve Designs", "Signature", "Summer 2026"],
+  ],
+  "ads-local": [
+    ["Prime Fitness Rx", "Standard"],
+    ["Porte + Hall", "Premium", "April 2026"],
+    ["HYOU Fine Jewelry", "Premium"],
+  ],
+  "ads-agencies": [
+    ["Stepful", "Signature", "Student Testimonials"],
+    ["Open Farm", "Signature", "Good Gut"],
+    ["Tubby Todd", "Premium", "Brand Campaign"],
+  ],
+};
+
 // Muted previews in the hero, served from public/videos (client work, see the catalog).
 export type HeroClip = { brand: string; tier: Tier; campaign?: string; file: string };
 export const HERO_CLIPS: HeroClip[] = [

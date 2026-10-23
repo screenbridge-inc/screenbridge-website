@@ -176,6 +176,22 @@ button { font: inherit; cursor: pointer; background: none; }
   .sec-why .item h3 + p { @apply mb-3; font-size: var(--text-2xl); font-weight: var(--weight-semibold); line-height: 1.15; letter-spacing: -0.02em; color: var(--fg-1); text-wrap: balance; }
   .sec-why .item p { color: var(--fg-2); }
   .sec-why .item p:last-child { @apply mb-0; }
+  /* Local price ladder (/for/local-businesses): four monthly budgets, the first carries the per-day line. */
+  .sec-ladder { background: var(--bg-subtle); }
+  .sec-ladder .md > p { font-size: var(--text-lg); color: var(--fg-2); max-width: 52ch; }
+  .sec-ladder .items { @apply mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4; }
+  .sec-ladder .item { @apply flex flex-col p-8; background: var(--bg-elevated); border-radius: var(--radius-xl); border: 1px solid var(--divider); }
+  .sec-ladder .item h3 { @apply mb-2; font-size: var(--text-3xl); letter-spacing: -0.03em; }
+  .sec-ladder .item p { @apply mb-0; color: var(--fg-2); }
+  .sec-ladder .item:first-child h3 + p { @apply mb-4; font-size: var(--text-sm); color: var(--fg-3); }
+  /* About facts block: label left, fact right, one row each. */
+  .sec-facts .items { @apply mt-12; border-top: 1px solid var(--divider); }
+  .sec-facts .item { @apply grid gap-2 py-6 md:grid-cols-[14rem_1fr] md:gap-10; border-bottom: 1px solid var(--divider); }
+  .sec-facts .item h3 { @apply m-0; font-size: var(--text-sm); text-transform: uppercase; letter-spacing: .08em; color: var(--fg-3); }
+  .sec-facts .item p { @apply m-0; font-size: var(--text-lg); color: var(--fg-1); }
+  .sec-facts .item a, .sec-contact .md a { color: var(--brand); text-decoration: underline; text-underline-offset: 3px; }
+  .sec-contact { padding-top: 0; }
+  .sec-contact .close-ctas { @apply justify-start; }
   .sec-loop { background: var(--bg-subtle); }
   .sec-loop .md > p { font-size: var(--text-lg); color: var(--fg-2); max-width: 46ch; }
   .sec-loop .items { @apply mt-14 grid gap-10 md:grid-cols-2 lg:grid-cols-4; counter-reset: step; }

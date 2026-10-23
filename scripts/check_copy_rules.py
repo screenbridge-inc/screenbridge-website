@@ -23,6 +23,8 @@ EXTS = {".md", ".ts", ".tsx", ".json", ".html"}
 LEGAL = {"content/terms-conditions.md", "content/privacy-policy.md", "content/ugc-ad-checker-terms-conditions.md"}
 # The homepage and the three door pages carry no competitor name.
 DOORS = {"content/index.md", "content/creative.md", "content/performance-plan.md", "content/reach.md"}
+# The local ladder is the one page with dollar figures (Tim, 2026-10-23). Every other rule applies.
+ALLOW_DOLLARS = {"content/for/local-businesses.md"}
 
 # (rule, pattern, applies to legal pages too)
 RULES = [
@@ -66,6 +68,8 @@ def main() -> int:
             text = re.sub(r"(^|\s)//.*$", "", text, flags=re.M)
             text = "\n".join(l for l in text.splitlines() if ".replace(" not in l)
         rules = [r for r in RULES if r[2] or rel not in LEGAL]
+        if rel in ALLOW_DOLLARS:
+            rules = [r for r in rules if not r[0].startswith("dollar figure")]
         if rel in DOORS:
             rules.append(("competitor name on a door page", COMPETITORS, True))
         for n, line in enumerate(text.splitlines(), 1):

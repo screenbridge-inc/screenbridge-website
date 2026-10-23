@@ -1,5 +1,6 @@
 import FeaturedWork from "./FeaturedWork";
-import { BOOK_CALL_URL, REACH_URL } from "../site";
+import { BOOK_CALL_URL, CONTACT_EMAIL, REACH_URL } from "../site";
+import { PICKS } from "../lib/work";
 import type { Section } from "../lib/content";
 
 // React content a markdown section gets by its class, on any page that uses it.
@@ -40,6 +41,7 @@ const Logos = ({ list, cls }: { list: string[][]; cls: string }) => (
 export function sectionExtra(s: Section) {
   if (s.cls === "trust") return <Logos list={TRUST} cls="logos-trust" />;
   if (s.cls === "featured") return <FeaturedWork />;
+  if (PICKS[s.cls]) return <FeaturedWork picks={PICKS[s.cls]} />;
   if (s.cls === "platforms") return <Logos list={PLATFORMS} cls="logos-platforms" />;
   if (s.cls === "close")
     return (
@@ -49,6 +51,18 @@ export function sectionExtra(s: Section) {
         </a>
         <a href={REACH_URL} className="btn btn-outline btn-lg">
           Plan a Reach campaign
+        </a>
+      </div>
+    );
+  // Contact page: one action, plus the mailbox.
+  if (s.cls === "contact")
+    return (
+      <div className="close-ctas">
+        <a href={BOOK_CALL_URL} className="btn btn-primary btn-lg">
+          Book a call
+        </a>
+        <a href={`mailto:${CONTACT_EMAIL}`} className="btn btn-outline btn-lg">
+          Email us
         </a>
       </div>
     );
