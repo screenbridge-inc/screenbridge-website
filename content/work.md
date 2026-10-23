@@ -34,6 +34,10 @@ Work {.eyebrow}
 
 Browse Standard, Premium and Signature ads made from real creator content.
 
+## The brands we have made ads for. {.brands}
+
+From DTC startups to household names.
+
 ## Top brands use Screenbridge to turn UGC into premium CTV ads. {.close}
 
 Book your free 30-minute creative review, and we’ll walk you through the transformation.

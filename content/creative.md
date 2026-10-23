@@ -239,6 +239,10 @@ per 30-second ad {.per}
 
 Crafted by experts. Designed to perform. Click on a video to watch with sound on.
 
+## The brands we have made ads for. {.brands}
+
+From DTC startups to household names.
+
 ## Easy Project Management via the Screenbridge Dashboard {.dashboard}
 
 One place to follow every ad from the first upload to the final file.
