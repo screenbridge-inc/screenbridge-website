@@ -2,6 +2,7 @@ export const SITE_URL = "https://www.screenbridge.tv";
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/images/OpengraphScreenbridge.png`;
 export const GTM_ID = "GTM-M52G95GL";
 export const BOOK_CALL_URL = "https://meetings.hubspot.com/screenbridge/screenbridge-call";
+export const REACH_URL = "https://reach.screenbridge.tv";
 export const SIGN_IN_URL = "https://dashboard.screenbridge.tv/dashboard";
 export const CONTACT_EMAIL = "info@screenbridge.tv";
 

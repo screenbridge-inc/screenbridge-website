@@ -5,7 +5,7 @@ import Reveal from "../components/Reveal";
 import type { Page, PageMeta, Section } from "../lib/content";
 
 // Section classes (`## Heading {.name}` in markdown) that sit on a dark band.
-const DARK = new Set(["testimonials", "book"]);
+const DARK = new Set(["testimonials", "book", "close"]);
 
 type Props = {
   page: Page;
