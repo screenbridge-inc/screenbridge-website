@@ -24,13 +24,17 @@ restated here so no other thread needs to be read.
 4. **Page map:** section 3. Tim's three doors (`/creative`, `/performance-plan`, `/reach`) are the
    spine; the structure thread's "who it is for", case-study, and About pages hang off it.
 5. **Naming:** `/creative`, not `/ctv-ads`. The H1 carries the search intent as a sentence.
-6. **No `/pricing` page.** No dollar figure, no percentage, anywhere on www. The `TODO(pricing)`
-   markers stay until Tim names a figure for a specific page.
+6. **No `/pricing` page.** No dollar figure anywhere on www. The `TODO(pricing)` markers stay until
+   Tim names a figure for a specific page. Percentages already on pages stay (Tim, 2026-10-23); any
+   change to one is decided page by page with Tim.
 7. **Reach stays on its own domain.** `/reach` on www is a premium overview whose main CTA goes to
    reach.screenbridge.tv. The SEO spokes stay on reach. Folding the two domains is a later decision.
 8. **All 28 current URLs keep resolving.** Pages that move get a 301 in `vercel.json`.
-9. **Timing:** Phase 1 (merge, brief, handoff, archive) runs now. Phase 2 (the premium pass) starts
-   after Dmitry's feedback on the current preview, unless Tim says start sooner.
+9. **Timing:** Phase 1 done. Phase 2 started 2026-10-23 on Tim's go, without waiting for Dmitry.
+10. **Package pages keep their flat URLs** (`/work-standard`, `/work-premium`, `/work-signature`):
+    they are the indexed addresses, and moving them would trade ranking for nothing (Tim, 2026-10-23).
+11. **CI:** a GitHub Actions workflow runs the build, `npm run parity` and `check_copy_rules.py` on
+    every push to the PR. It never deploys.
 
 ## 3. Page map
 
@@ -41,17 +45,16 @@ two siblings, one CTA. Routes not listed keep their current content and get the 
 |---|---|---|---|
 | `/` | Bring the power of UGC to CTV. | Three doors | Split hero (v2), trust strip, three door cards (creative / performance plan / Reach), selected ads (6), one big quote, 3-stat row, channel logos, closing CTA |
 | `/creative` | UGC-style TV ads, built from the social content you already have. | Creative only, the current business | Full-bleed still hero, from-the-feed-to-the-living-room (3 frames), Standard / Premium / Signature with delivery times (10 / 15 / 20 business days) and no prices, selected ads, how a project runs (dashboard), FAQ, CTA |
-| `/performance-plan` | We make the ads. You pay as they run. | The Creative Lease, in plain words | Hero still, how it works (we build, you tag spend, new batch when the last one is live), who it fits, what you get, FAQ, CTA = book a call. **No percentage, no floor, no term on the page**; those are quoted on the call |
+| `/performance-plan` | We make the ads. You pay as they run. | The Creative Lease, in plain words | Hero still, how it works (we build, you tag spend, new batch when the last one is live), who it fits, what you get, FAQ, CTA = book a call. **No lease rate, floor or term on the page**; those are quoted on the call |
 | `/reach` | Run CTV through Reach and the ads are included. | Premium overview of the media product | Hero (fatty15 light panel from v2), why run CTV through Reach (6 cards from v2, minus "month to month"), the loop, attribution, CTA = reach.screenbridge.tv |
 | `/for/dtc-brands`, `/for/local-businesses`, `/for/agencies` | one sentence each | Who it is for | Short: the fit, which door, 3 ads, CTA. Local may cite the $2,500 / $5K / $10K tiers (3-month commitment) **only if** Tim confirms this page is a local page; default is no figures |
-| `/work`, `/work/standard`, `/work/premium`, `/work/signature` | existing | Proof hub | Keep the grid; re-skin to the rules |
+| `/work`, `/work-standard`, `/work-premium`, `/work-signature` | existing | Proof hub | Keep the grid; re-skin to the rules |
 | `/case-studies/<brand>` | existing templates | One page per client-approved story | Mixbook, Carve, fatty15 first; numbers only where the client approved them |
 | `/about` | Screenbridge is a New York video agency that makes UGC-style TV ads and runs them on CTV. | Plain facts for people and crawlers | The facts block, founders, Organization JSON-LD; same facts verbatim in every footer |
 | `/contact` | Book a 15-minute intro call. | One action | Calendar embed or mailto, nothing else |
 
-**Redirects (301, in `vercel.json`):** `/ctv-media-buying-services` to `/reach`;
-`/work-standard` `/work-premium` `/work-signature` to `/work/<tier>` **only if** the build already
-uses the nested form, otherwise leave them. Nothing else moves.
+**Redirects (301, in `vercel.json`):** `/ctv-media-buying-services` to `/reach`, added in the
+Reach step. The package pages stay flat (decision 10). Nothing else moves.
 
 **Nav:** Creative, Performance Plan, Reach, Work, About, Book a call. Six items, no dropdowns.
 
@@ -74,7 +77,7 @@ Tokens only, from `src/styles/tokens.css`. Never a Front Row colour.
 
 ## 5. Copy rules (lint these, do not trust the prompt)
 
-- No dollar figure, no percentage, no "from $X" on any www page. `TODO(pricing)` stays.
+- No dollar figure, no "from $X" on any www page. `TODO(pricing)` stays.
 - No competitor name on the homepage or the three door pages. Competitor contrasts live on reach spokes.
 - No "month to month", "no long-term contract", "cancel anytime", "no minimum spend". The Reach term is
   3 months or unstated. The v2 mockup's "Month to month" card is **wrong as of 2026-10-22**; drop it.
@@ -117,7 +120,7 @@ above and run it next to `npm run parity` in CI.
    this thread (`e88428f5`). **Tim OKs first.**
 6. Update memory `project_www_rebuild_frontrow_reference` with: one build, this doc is the SoT.
 
-### Phase 2: the premium pass (build session, after Dmitry's feedback)
+### Phase 2: the premium pass (started 2026-10-23)
 
 Each item is its own commit with a 1440 and 375 screenshot in `docs/screenshots/design-pass-2/`
 and `npm run parity` + `check_copy_rules.py` green.

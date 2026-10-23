@@ -20,7 +20,11 @@ export type Spot = {
   added: string;
 };
 
-export const WORK = data as Spot[];
+// Brands whose case-study clause nobody has confirmed yet (docs/one-build-plan.md section 6).
+// They stay in the catalog and off every page until someone checks the signed SOW.
+export const NOT_CLEARED = new Set(["Graza"]); // copy-rules: allow
+
+export const WORK = (data as Spot[]).filter((s) => !NOT_CLEARED.has(s.brand));
 
 export function embedUrl(s: Spot): string {
   const q = new URLSearchParams({ autoplay: "1", dnt: "1", title: "0", byline: "0", portrait: "0" });
