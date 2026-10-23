@@ -1,1 +1,1 @@
-{"root":["./src/app.tsx","./src/main.tsx"],"version":"5.9.3"}
+{"root":["./src/app.tsx","./src/entry-client.tsx","./src/entry-server.tsx","./src/site.ts","./src/vite-env.d.ts","./src/components/consentbanner.tsx","./src/components/layout.tsx","./src/components/reveal.tsx","./src/components/seo.tsx","./src/lib/consent.ts","./src/lib/content.ts","./src/pages/contentpage.tsx","./src/pages/notfound.tsx"],"version":"5.9.3"}

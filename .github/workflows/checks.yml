@@ -1,0 +1,29 @@
+# Build, SEO parity and copy rules on every push and PR. Never deploys (Vercel does previews).
+name: checks
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - name: Copy rules
+        run: python3 -I scripts/check_copy_rules.py
+      - name: SEO parity (raw HTML, crawler view)
+        run: |
+          python3 -m http.server 4173 --directory dist >/dev/null 2>&1 &
+          for i in $(seq 1 20); do curl -sf http://localhost:4173/ >/dev/null && break; sleep 0.5; done
+          npm run parity
