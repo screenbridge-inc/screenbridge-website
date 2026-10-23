@@ -54,7 +54,7 @@ jsonld: [
 
 [Work](/work) / Premium {.eyebrow}
 
-# Premium CTV Ads Built From Raw UGC
+# Premium CTV ads built from raw UGC.
 
 Our most popular option. We take your raw UGC or creator footage and build a TV-ready ad with animated custom designs and advanced motion graphics.
 
@@ -91,8 +91,6 @@ Delivered in 20 business days {.per}
 
 [See Signature ads](/work-signature){.cta}
 
-## Top brands use Screenbridge to turn UGC into premium CTV ads. {.book}
+## Top brands use Screenbridge to turn UGC into premium CTV ads. {.close}
 
 Book your free 30-minute creative review, and we’ll walk you through the transformation.
-
-[Book Your Call](https://meetings.hubspot.com/screenbridge/screenbridge-call){.cta}

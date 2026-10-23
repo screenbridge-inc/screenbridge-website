@@ -1,5 +1,6 @@
 import ContentPage from "./ContentPage";
 import WorkGrid from "../components/WorkGrid";
+import { sectionExtra } from "../components/sectionExtras";
 import { WORK, spotName, type Tier } from "../lib/work";
 import type { Page } from "../lib/content";
 
@@ -25,7 +26,7 @@ export default function WorkPage({ page, tier }: { page: Page; tier?: Tier }) {
     <ContentPage
       page={page}
       meta={withVideos(page, tier)}
-      extra={(_s, i) => (i === 0 ? <WorkGrid key={tier ?? "all"} tier={tier} /> : null)}
+      extra={(s, i) => (i === 0 ? <WorkGrid key={tier ?? "all"} tier={tier} /> : sectionExtra(s))}
     />
   );
 }

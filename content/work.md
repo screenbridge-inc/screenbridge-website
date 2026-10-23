@@ -30,12 +30,10 @@ jsonld: [
 ---
 Work {.eyebrow}
 
-# Real UGC Transformed Into CTV Ads
+# Real UGC transformed into CTV ads.
 
 Browse Standard, Premium and Signature ads made from real creator content.
 
-## Top brands use Screenbridge to turn UGC into premium CTV ads. {.book}
+## Top brands use Screenbridge to turn UGC into premium CTV ads. {.close}
 
 Book your free 30-minute creative review, and we’ll walk you through the transformation.
-
-[Book Your Call](https://meetings.hubspot.com/screenbridge/screenbridge-call){.cta}

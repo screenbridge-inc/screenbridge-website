@@ -54,7 +54,7 @@ jsonld: [
 
 [Work](/work) / Signature {.eyebrow}
 
-# Signature Hero Ads Built for Brand Awareness
+# Signature hero ads built for brand awareness.
 
 Make a splash with a hero ad built for brand awareness and long-term use. Best-in-class storytelling and pacing that grabs attention.
 
@@ -91,8 +91,6 @@ Delivered in 15 business days {.per}
 
 [See Premium ads](/work-premium){.cta}
 
-## Top brands use Screenbridge to turn UGC into premium CTV ads. {.book}
+## Top brands use Screenbridge to turn UGC into premium CTV ads. {.close}
 
 Book your free 30-minute creative review, and we’ll walk you through the transformation.
-
-[Book Your Call](https://meetings.hubspot.com/screenbridge/screenbridge-call){.cta}

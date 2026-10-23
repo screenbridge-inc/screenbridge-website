@@ -54,7 +54,7 @@ jsonld: [
 
 [Work](/work) / Standard {.eyebrow}
 
-# Standard CTV Ads Made From Your Best Social Ads
+# Standard CTV ads made from your best social ads.
 
 The fastest, simplest way to launch UGC on CTV. We transform one finished social ad into a TV-ready spot with static custom designs and simple motion graphics.
 
@@ -91,8 +91,6 @@ Delivered in 20 business days {.per}
 
 [See Signature ads](/work-signature){.cta}
 
-## Top brands use Screenbridge to turn UGC into premium CTV ads. {.book}
+## Top brands use Screenbridge to turn UGC into premium CTV ads. {.close}
 
 Book your free 30-minute creative review, and we’ll walk you through the transformation.
-
-[Book Your Call](https://meetings.hubspot.com/screenbridge/screenbridge-call){.cta}
