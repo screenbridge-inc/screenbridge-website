@@ -179,6 +179,7 @@ button { font: inherit; cursor: pointer; background: none; }
   .sec-loop { background: var(--bg-subtle); }
   .sec-loop .md > p { font-size: var(--text-lg); color: var(--fg-2); max-width: 46ch; }
   .sec-loop .items { @apply mt-14 grid gap-10 md:grid-cols-2 lg:grid-cols-4; counter-reset: step; }
+  .sec-loop .items:has(> .item:nth-child(3):last-child) { @apply lg:grid-cols-3; }
   .sec-loop .item { border-top: 2px solid var(--fg-1); @apply pt-6; counter-increment: step; }
   .sec-loop .item h3::before { content: "0" counter(step); display: block; @apply mb-3; font-size: var(--text-sm); letter-spacing: .08em; color: var(--accent); }
   .sec-loop .item h3 { @apply mb-2; font-size: var(--text-2xl); }
