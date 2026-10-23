@@ -8,6 +8,8 @@ export type PageMeta = {
   description: string;
   canonical: string;
   ogImage?: string;
+  // full-bleed still behind the first section (a door page)
+  hero?: string;
   noindex?: boolean;
   template?: boolean;
   source?: string;
@@ -20,7 +22,7 @@ export type Section = { html: string; cls: string; id: string };
 
 export type Page = PageMeta & { path: string; h1: string; sections: Section[] };
 
-const GROUPED = new Set(["channels", "tiers", "features", "team", "compare", "faq", "doors", "stats"]);
+const GROUPED = new Set(["channels", "tiers", "features", "team", "compare", "faq", "doors", "stats", "frames"]);
 
 const files = import.meta.glob("/content/**/*.md", { query: "?raw", import: "default", eager: true }) as Record<
   string,

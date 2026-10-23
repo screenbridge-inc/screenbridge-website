@@ -105,6 +105,16 @@ button { font: inherit; cursor: pointer; background: none; }
   .hero-ctas { @apply mt-auto flex flex-wrap gap-3 pt-10; }
   .hero-ads .btn-outline { color: var(--fg-on-dark-1); border-color: color-mix(in srgb, var(--sb-white) 40%, transparent); }
   .hero-ads .btn-outline:hover { border-color: var(--sb-white); }
+  /* door-page hero: one still, full width, copy top-left */
+  .hero-still { grid-template-columns: 1fr !important; }
+  .hero-still .hero-copy { min-height: min(82vh, 820px); }
+  /* line the copy up with .wrap below it */
+  @media (min-width: 768px) { .hero-still .hero-copy { padding-inline: max(2rem, calc((100% - var(--content)) / 2 + 2rem)); } }
+  .hero-still h1 { max-width: 16ch; }
+  .hero-still .lead p { max-width: 40ch; }
+  .hero-still .hero-ads::before { background: linear-gradient(100deg, color-mix(in srgb, var(--bg-inverse) 92%, transparent) 0%, color-mix(in srgb, var(--bg-inverse) 70%, transparent) 45%, color-mix(in srgb, var(--bg-inverse) 15%, transparent) 100%); }
+  @media (max-width: 767px) { .hero-still .hero-ads::before { background: linear-gradient(180deg, color-mix(in srgb, var(--bg-inverse) 92%, transparent) 0%, color-mix(in srgb, var(--bg-inverse) 55%, transparent) 70%, color-mix(in srgb, var(--bg-inverse) 85%, transparent) 100%); } }
+
   .btn-ink { background: var(--bg-inverse); color: var(--sb-white); }
   .btn-ink:hover { opacity: .88; }
 
@@ -147,6 +157,14 @@ button { font: inherit; cursor: pointer; background: none; }
 
   /* three-stat row */
   .sec-stats { background: var(--bg-subtle); }
+  /* from the feed to the living room: three stills with a one-line caption */
+  .sec-frames .md > p { font-size: var(--text-lg); color: var(--fg-2); max-width: 46ch; }
+  .sec-frames .items { @apply mt-14 grid gap-8 md:grid-cols-3; }
+  .sec-frames .item h3 { @apply mb-3 mt-5; font-size: var(--text-sm); text-transform: uppercase; letter-spacing: .08em; color: var(--fg-3); order: 2; }
+  .sec-frames .item { display: flex; flex-direction: column; }
+  .sec-frames .item p:has(img) { order: 1; margin: 0; }
+  .sec-frames .item img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: var(--radius-xl); }
+  .sec-frames .item p:not(:has(img)) { order: 3; font-size: var(--text-xl); font-weight: var(--weight-semibold); color: var(--fg-1); margin: 0; text-wrap: balance; }
   .sec-stats .items { @apply mt-14 grid gap-10 md:grid-cols-3; }
   .sec-stats .item { border-top: 2px solid var(--fg-1); @apply pt-6; }
   .sec-stats .item h3 { font-size: clamp(var(--text-5xl), 7vw, 6rem); line-height: 1; letter-spacing: -0.04em; @apply mb-4; }

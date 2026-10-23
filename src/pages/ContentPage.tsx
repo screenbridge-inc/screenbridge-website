@@ -2,6 +2,8 @@ import { useNavigate } from "react-router-dom";
 import type { MouseEvent, ReactNode } from "react";
 import Seo from "../components/Seo";
 import Reveal from "../components/Reveal";
+import StillHero from "../components/StillHero";
+import { sectionExtra } from "../components/sectionExtras";
 import type { Page, PageMeta, Section } from "../lib/content";
 
 // Section classes (`## Heading {.name}` in markdown) that sit on a dark band.
@@ -17,7 +19,8 @@ type Props = {
 };
 
 // One <section> per h2 of the markdown.
-export default function ContentPage({ page, meta, first, extra }: Props) {
+export default function ContentPage({ page, meta, first, extra = sectionExtra }: Props) {
+  if (!first && page.hero) first = <StillHero section={page.sections[0]} src={page.hero} />;
   const navigate = useNavigate();
   // Internal links inside markdown HTML use client-side navigation.
   const onClick = (e: MouseEvent<HTMLDivElement>) => {
