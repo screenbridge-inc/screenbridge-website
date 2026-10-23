@@ -52,5 +52,17 @@ export function sectionExtra(s: Section) {
         </a>
       </div>
     );
+  // Reach page close: the campaign planner leads, the call follows.
+  if (s.cls === "close-reach")
+    return (
+      <div className="close-ctas">
+        <a href={REACH_URL} className="btn btn-primary btn-lg">
+          Plan a campaign
+        </a>
+        <a href={BOOK_CALL_URL} className="btn btn-outline btn-lg">
+          Book a call
+        </a>
+      </div>
+    );
   return null;
 }

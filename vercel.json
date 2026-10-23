@@ -4,5 +4,11 @@
   "outputDirectory": "dist",
   "cleanUrls": true,
   "trailingSlash": false,
-  "redirects": []
+  "redirects": [
+    {
+      "source": "/ctv-media-buying-services",
+      "destination": "/reach",
+      "permanent": true
+    }
+  ]
 }

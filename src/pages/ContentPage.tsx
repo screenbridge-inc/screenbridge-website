@@ -7,7 +7,7 @@ import { sectionExtra } from "../components/sectionExtras";
 import type { Page, PageMeta, Section } from "../lib/content";
 
 // Section classes (`## Heading {.name}` in markdown) that sit on a dark band.
-const DARK = new Set(["testimonials", "book", "close"]);
+const DARK = new Set(["testimonials", "book", "close", "close-reach"]);
 
 type Props = {
   page: Page;
@@ -20,7 +20,7 @@ type Props = {
 
 // One <section> per h2 of the markdown.
 export default function ContentPage({ page, meta, first, extra = sectionExtra }: Props) {
-  if (!first && page.hero) first = <StillHero section={page.sections[0]} src={page.hero} />;
+  if (!first && page.hero) first = <StillHero section={page.sections[0]} src={page.hero} variant={page.hero_style} />;
   const navigate = useNavigate();
   // Internal links inside markdown HTML use client-side navigation.
   const onClick = (e: MouseEvent<HTMLDivElement>) => {

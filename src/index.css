@@ -112,6 +112,9 @@ button { font: inherit; cursor: pointer; background: none; }
   @media (min-width: 768px) { .hero-still .hero-copy { padding-inline: max(2rem, calc((100% - var(--content)) / 2 + 2rem)); } }
   .hero-still h1 { max-width: 16ch; }
   .hero-still .lead p { max-width: 40ch; }
+  .hero-still-reach h1 { color: var(--fg-1); }
+  .hero-still-reach .hero-reach::before { background: linear-gradient(100deg, color-mix(in srgb, var(--bg-subtle) 96%, transparent) 0%, color-mix(in srgb, var(--bg-subtle) 80%, transparent) 45%, color-mix(in srgb, var(--bg-subtle) 10%, transparent) 100%); }
+  @media (max-width: 767px) { .hero-still-reach .hero-reach::before { background: linear-gradient(180deg, color-mix(in srgb, var(--bg-subtle) 96%, transparent) 0%, color-mix(in srgb, var(--bg-subtle) 70%, transparent) 70%, color-mix(in srgb, var(--bg-subtle) 90%, transparent) 100%); } }
   .hero-still .hero-ads::before { background: linear-gradient(100deg, color-mix(in srgb, var(--bg-inverse) 92%, transparent) 0%, color-mix(in srgb, var(--bg-inverse) 70%, transparent) 45%, color-mix(in srgb, var(--bg-inverse) 15%, transparent) 100%); }
   @media (max-width: 767px) { .hero-still .hero-ads::before { background: linear-gradient(180deg, color-mix(in srgb, var(--bg-inverse) 92%, transparent) 0%, color-mix(in srgb, var(--bg-inverse) 55%, transparent) 70%, color-mix(in srgb, var(--bg-inverse) 85%, transparent) 100%); } }
 
@@ -165,6 +168,21 @@ button { font: inherit; cursor: pointer; background: none; }
   .sec-frames .item p:has(img) { order: 1; margin: 0; }
   .sec-frames .item img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: var(--radius-xl); }
   .sec-frames .item p:not(:has(img)) { order: 3; font-size: var(--text-xl); font-weight: var(--weight-semibold); color: var(--fg-1); margin: 0; text-wrap: balance; }
+  /* /reach: why cards (label, big line, body) and the four-step loop */
+  .sec-why .md > p { font-size: var(--text-lg); color: var(--fg-2); max-width: 46ch; }
+  .sec-why .items { @apply mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3; }
+  .sec-why .item { @apply p-8 md:p-10; background: var(--bg-subtle); border-radius: var(--radius-xl); }
+  .sec-why .item h3 { @apply mb-4; font-size: var(--text-sm); text-transform: uppercase; letter-spacing: .08em; color: var(--brand); }
+  .sec-why .item h3 + p { @apply mb-3; font-size: var(--text-2xl); font-weight: var(--weight-semibold); line-height: 1.15; letter-spacing: -0.02em; color: var(--fg-1); text-wrap: balance; }
+  .sec-why .item p { color: var(--fg-2); }
+  .sec-why .item p:last-child { @apply mb-0; }
+  .sec-loop { background: var(--bg-subtle); }
+  .sec-loop .md > p { font-size: var(--text-lg); color: var(--fg-2); max-width: 46ch; }
+  .sec-loop .items { @apply mt-14 grid gap-10 md:grid-cols-2 lg:grid-cols-4; counter-reset: step; }
+  .sec-loop .item { border-top: 2px solid var(--fg-1); @apply pt-6; counter-increment: step; }
+  .sec-loop .item h3::before { content: "0" counter(step); display: block; @apply mb-3; font-size: var(--text-sm); letter-spacing: .08em; color: var(--accent); }
+  .sec-loop .item h3 { @apply mb-2; font-size: var(--text-2xl); }
+  .sec-loop .item p { color: var(--fg-2); max-width: 26ch; margin: 0; }
   .sec-stats .items { @apply mt-14 grid gap-10 md:grid-cols-3; }
   .sec-stats .item { border-top: 2px solid var(--fg-1); @apply pt-6; }
   .sec-stats .item h3 { font-size: clamp(var(--text-5xl), 7vw, 6rem); line-height: 1; letter-spacing: -0.04em; @apply mb-4; }
@@ -180,12 +198,12 @@ button { font: inherit; cursor: pointer; background: none; }
   .logos-platforms img[src*="Youtube"], .logos-platforms img[src*="Amazon"] { height: 52px; }
 
   /* oversized closing CTA */
-  .sec-close { background: var(--bg-inverse); text-align: center; }
-  .sec-close h2 { margin-inline: auto; max-width: 16ch !important; font-size: clamp(var(--text-4xl), 6.4vw, 5.5rem) !important; color: var(--fg-on-dark-1) !important; }
-  .sec-close .md > p { margin-inline: auto; @apply mt-6; font-size: var(--text-lg); color: var(--fg-on-dark-2); max-width: 46ch; }
-  .sec-close .md a { color: var(--fg-on-dark-1); text-decoration: underline; text-underline-offset: 3px; }
+  .sec-close, .sec-close-reach { background: var(--bg-inverse); text-align: center; }
+  .sec-close h2, .sec-close-reach h2 { margin-inline: auto; max-width: 16ch !important; font-size: clamp(var(--text-4xl), 6.4vw, 5.5rem) !important; color: var(--fg-on-dark-1) !important; }
+  .sec-close .md > p, .sec-close-reach .md > p { margin-inline: auto; @apply mt-6; font-size: var(--text-lg); color: var(--fg-on-dark-2); max-width: 46ch; }
+  .sec-close .md a, .sec-close-reach .md a { color: var(--fg-on-dark-1); text-decoration: underline; text-underline-offset: 3px; }
   .close-ctas { @apply mt-12 flex flex-wrap justify-center gap-3; }
-  .sec-close .btn-outline { color: var(--fg-on-dark-1); border-color: color-mix(in srgb, var(--sb-white) 40%, transparent); }
+  .sec-close .btn-outline, .sec-close-reach .btn-outline { color: var(--fg-on-dark-1); border-color: color-mix(in srgb, var(--sb-white) 40%, transparent); }
 
   /* channel strip */
   .sec-channels { background: var(--bg-subtle); @apply py-10 md:py-14; }
