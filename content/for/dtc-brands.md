@@ -35,19 +35,13 @@ Run it through [Reach](/reach) and a pixel ties impressions to visits and conver
 
 ## Which door {.doors}
 
-Three ways in. Pick the one that matches where you are.
+Two ways in. Pick the one that matches where you are.
 
-### Creative
+### Ads
 
-Buy the ads.
+Buy the ads, or pay as they run.
 
-You own them and run them wherever you like. [See the packages](/creative).
-
-### Performance Plan
-
-Pay as they run.
-
-No upfront production fee for brands already spending on streaming. [How the plan works](/performance-plan).
+Pay upfront and own them, or skip the production fee and pay a share of the streaming spend they run on. [See the packages](/creative).
 
 ### Reach
 

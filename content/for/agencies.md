@@ -37,17 +37,11 @@ The same producers and editors on every brief, so a new client does not mean a n
 
 Most agencies start with the ads.
 
-### Creative
+### Ads
 
 Buy the ads for a client.
 
-Pick a package per client. [See the packages](/creative).
-
-### Performance Plan
-
-Pay as they run.
-
-For clients already spending on streaming. [How the plan works](/performance-plan).
+Pick a package per client, and pay upfront or as a share of the client's streaming spend. [See the packages](/creative).
 
 ### Reach
 

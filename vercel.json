@@ -9,6 +9,11 @@
       "source": "/ctv-media-buying-services",
       "destination": "/reach",
       "permanent": true
+    },
+    {
+      "source": "/performance-plan",
+      "destination": "/creative",
+      "permanent": true
     }
   ]
 }

@@ -12,7 +12,7 @@ jsonld: [
     "@type": "Service",
     "name": "UGC-style TV ads",
     "serviceType": "CTV ad production",
-    "description": "Standard, Premium and Signature ads built from the social content you already have, delivered in 10, 15 or 20 business days.",
+    "description": "Standard, Premium and Signature ads built from the social content you already have, delivered in 10, 15 or 20 business days. Paid upfront per ad, or as a share of media spend on the Performance Plan.",
     "url": "https://www.screenbridge.tv/creative",
     "provider": {
       "@type": "Organization",
@@ -130,7 +130,15 @@ jsonld: [
         "name": "Do you offer subscriptions or bundle packages for ongoing campaigns?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. We offer both multi-month campaign plans and bundle packages for brands running recurring or multi-ad campaigns. These plans include flexible scheduling and built-in discounts. Contact us to learn more about what fits your campaign needs."
+          "text": "Yes. Bundle packages cover brands running several ads at once, and the Performance Plan replaces the upfront fee with a share of your media spend, with a new batch of ads once the last one is live. Book a call and we will tell you which fits."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I pay as the ads run instead of upfront?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. On the Performance Plan there is no upfront production fee: you pay a percentage of the media spend your ads run on, billed monthly. The rate and commitment are set on the intro call. While the plan runs, Screenbridge owns the ads; to own them outright, pay upfront instead. It fits brands already spending steadily on streaming TV, and you do not need to buy media through us."
         }
       },
       {
@@ -174,15 +182,13 @@ Type and motion that carry the message.
 
 ## Screenbridge Ad Packages {.tiers}
 
-Three ways to bring your best social content to the big screen.
+Three ways to bring your best social content to the big screen. Pay for each ad outright, or as a share of your media spend.
 
 ### Standard
 
 The fastest, simplest way to launch UGC on CTV
 
-<!-- TODO(pricing): figure removed until pricing is settled -->
-
-per 30-second ad {.per}
+<!-- No prices on the page by design (2026-10-23): the call sorts package and payment option. -->
 
 - Delivered in 10 business days
 - Creative review sessions with our team of CTV experts
@@ -201,9 +207,7 @@ Most Popular {.badge}
 
 Our most popular option to elevate your UGC into a premium TV-ready format
 
-<!-- TODO(pricing): figure removed until pricing is settled -->
-
-per 30-second ad {.per}
+<!-- No prices on the page by design (2026-10-23): the call sorts package and payment option. -->
 
 - Delivered in 15 business days
 - Everything in Standard, plus...
@@ -220,9 +224,7 @@ per 30-second ad {.per}
 
 Make a splash with a hero ad built for brand awareness and long-term use
 
-<!-- TODO(pricing): figure removed until pricing is settled -->
-
-per 30-second ad {.per}
+<!-- No prices on the page by design (2026-10-23): the call sorts package and payment option. -->
 
 - Delivered in 20 business days
 - Everything in Premium plus...
@@ -234,6 +236,26 @@ per 30-second ad {.per}
 [Book Your Call](https://meetings.hubspot.com/screenbridge/screenbridge-call){.cta}
 
 [See Signature examples](/work-signature/){.tier-work}
+
+## Two ways to pay {.why}
+
+Same packages, same team, same timelines. Pick the way that fits how you buy.
+
+### Pay upfront
+
+Buy the ad, own the ad.
+
+Pay for each package outright. Once it is paid, you get a worldwide, perpetual license to run the ad wherever you advertise.
+
+[Book Your Call](https://meetings.hubspot.com/screenbridge/screenbridge-call){.cta}
+
+### Performance Plan
+
+Pay as a share of your media spend.
+
+No upfront production fee. We make the ads, and you pay a percentage of the media spend they run on, billed monthly. When a batch is live, we start the next one. Built for brands already spending steadily on streaming TV.
+
+[Book Your Call](https://meetings.hubspot.com/screenbridge/screenbridge-call){.cta}
 
 ## Selected ads {.featured}
 
@@ -289,7 +311,11 @@ Once full payment is made, you receive a worldwide, perpetual license to use the
 
 ### Do you offer subscriptions or bundle packages for ongoing campaigns?
 
-Yes. We offer both multi-month campaign plans and bundle packages for brands running recurring or multi-ad campaigns. These plans include flexible scheduling and built-in discounts. Contact us to learn more about what fits your campaign needs.
+Yes. Bundle packages cover brands running several ads at once, and the Performance Plan replaces the upfront fee with a share of your media spend, with a new batch of ads once the last one is live. Book a call and we will tell you which fits.
+
+### Can I pay as the ads run instead of upfront?
+
+Yes. On the Performance Plan there is no upfront production fee: you pay a percentage of the media spend your ads run on, billed monthly. The rate and commitment are set on the intro call. While the plan runs, Screenbridge owns the ads; to own them outright, pay upfront instead. It fits brands already spending steadily on streaming TV, and you do not need to buy media through us.
 
 ### Why choose Screenbridge for your ads?
 
@@ -297,4 +323,4 @@ Screenbridge transforms creator and UGC footage into high-performing, broadcast-
 
 ## Start with the ad, or start with the campaign. {.close}
 
-Book a 15-minute intro call and we will tell you which package fits. Or write to [info@screenbridge.tv](mailto:info@screenbridge.tv).
+Book a 15-minute intro call and we will tell you which package, and which way to pay, fits. Or write to [info@screenbridge.tv](mailto:info@screenbridge.tv).
