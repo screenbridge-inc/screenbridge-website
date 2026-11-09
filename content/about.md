@@ -27,7 +27,7 @@ jsonld: [
     "founder": [
       { "@type": "Person", "name": "Dmitry Trakovsky", "jobTitle": "Co-Founder & CEO" },
       { "@type": "Person", "name": "Paloma Veinstein", "jobTitle": "Co-Founder & Creative Director" },
-      { "@type": "Person", "name": "Timothy Lalonde", "jobTitle": "Co-Founder & Head of Growth" }
+      { "@type": "Person", "name": "Timothy Lalonde", "jobTitle": "Co-Founder & CMO" }
     ],
     "knowsAbout": ["Connected TV advertising", "UGC-style video ads", "CTV media buying"]
   }
@@ -82,7 +82,7 @@ Co-Founder & Creative Director
 
 ![Timothy Lalonde](/images/Tim.png)
 
-Co-Founder & Head of Growth
+Co-Founder & CMO
 
 ### Dasha Khritankova
 
