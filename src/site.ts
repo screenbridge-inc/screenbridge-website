@@ -12,8 +12,7 @@ export const CONTACT_EMAIL = "info@screenbridge.tv";
 export const INSTANT_ACCESS_URL = "mailto:info@screenbridge.tv?subject=Screenbridge%20Instant%20early%20access";
 
 export const NAV = [
-  { to: "/creative", label: "Creative" },
-  { to: "/performance-plan", label: "Performance Plan" },
+  { to: "/creative", label: "Ads" },
   { to: "/reach", label: "Reach" },
   { to: "/instant", label: "Instant" },
   { to: "/work", label: "Work" },

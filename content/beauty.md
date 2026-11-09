@@ -180,7 +180,7 @@ Co-Founder & Creative Director
 
 Timothy Lalonde
 
-Co-Founder & Head of Growth
+Co-Founder & CMO
 
 ![](/images/Dasha.png)
 

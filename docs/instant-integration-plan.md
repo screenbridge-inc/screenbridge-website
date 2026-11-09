@@ -5,14 +5,16 @@ product scope (features, credit model, naming) belongs to Steve; nothing here de
 
 ## The brand map
 
-Screenbridge is the umbrella. Four ways to buy:
+Screenbridge is the umbrella. Three business lines (decided 2026-10-23):
 
 | Line | What it is | Who it fits |
 | --- | --- | --- |
-| Creative (Standard / Premium / Signature) | Custom CTV ads made to order by our team | Brands that want the best ad |
-| Performance Plan | Ads billed as a share of media spend | Brands already spending on streaming |
+| Ads (Standard / Premium / Signature, at /creative) | Custom CTV ads made to order by our team. Two ways to pay: upfront per ad, or the Performance Plan (a share of media spend) | Brands that want the best ad |
 | Reach | CTV media buying with the ads included | Brands that want one team for ad and media |
 | **Instant** | Self-serve tool: upload your own video, get TV versions, pay with credits | In-house teams, smaller budgets, anyone testing TV |
+
+The Performance Plan is a payment option on the Ads page, not its own page: /performance-plan
+redirects to /creative. No dollar figures on the Ads page; the call sorts budget and plan.
 
 Positioning rule: Instant is close to our Standard package and made by the customer;
 a Screenbridge ad is custom, higher production value, more animation. Every Instant
@@ -46,14 +48,13 @@ surface offers the upgrade path to a Screenbridge ad.
 
 ## Phase 2: at launch
 
-- Remove `noindex`, add Service + FAQPage JSON-LD (same pattern as performance-plan.md),
+- Remove `noindex`, add Service + FAQPage JSON-LD (same pattern as creative.md),
   add /instant to the sitemap, and run parity.
 - Real signup CTA everywhere `INSTANT_ACCESS_URL` is used.
 - Cross-links: a line on /creative ("Making them yourself? Try Instant"), a line on /reach
   FAQ for in-house media teams, and Instant as the low tier on /for/* audience pages where
   budget is the objection.
-- "Compare" section or page across all four lines (Creative, Performance Plan, Reach,
-  Instant) so visitors self-sort.
+- "Compare" section or page across the three lines (Ads, Reach, Instant) so visitors self-sort.
 
 ## Phase 3: after launch
 

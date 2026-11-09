@@ -16,7 +16,11 @@ jsonld: [
     "url": "https://www.screenbridge.tv/",
     "about": {
       "@type": "Organization",
+      "@id": "https://www.screenbridge.tv/#organization",
       "name": "Screenbridge",
+      "legalName": "Screenbridge Inc.",
+      "url": "https://www.screenbridge.tv/",
+      "address": { "@type": "PostalAddress", "addressLocality": "New York", "addressRegion": "NY", "addressCountry": "US" },
       "description": "Screenbridge transforms social videos into premium ads that perform. Perfect for TV, CTV, YouTube, Amazon, OLV and beyond.",
       "logo": {
         "@type": "ImageObject",
@@ -24,7 +28,10 @@ jsonld: [
       },
       "email": "info@screenbridge.tv",
       "sameAs": [
-        "mailto:hello@screenbridge.tv"
+        "https://www.linkedin.com/company/screenbridge",
+        "https://www.instagram.com/screenbridge.tv/",
+        "https://reach.screenbridge.tv",
+        "https://www.filmkraft.tv"
       ],
       "review": [
         {
@@ -42,6 +49,14 @@ jsonld: [
         }
       ]
     }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://www.screenbridge.tv/#website",
+    "name": "Screenbridge",
+    "url": "https://www.screenbridge.tv/",
+    "publisher": { "@id": "https://www.screenbridge.tv/#organization" }
   }
 ]
 ---
@@ -62,23 +77,23 @@ Screenbridge is powered by [Filmkraft.tv](https://www.filmkraft.tv/), the creati
 
 One team makes the ad, buys the TV, and learns from both. What the campaign tells us becomes the next cut.
 
-### Creative
+### Ads
 
-Standard, Premium and Signature ads, built from the social content you already have and delivered in 10, 15 or 20 business days.
+Standard, Premium and Signature ads, built from the social content you already have. Pay for each ad outright, or as a share of your media spend.
 
 [See the packages](/creative)
-
-### Performance Plan
-
-We make the ads. You pay as they run.
-
-[How the plan works](/performance-plan)
 
 ### Reach
 
 On air through Reach, with the ad included. We plan the buy, run it, and turn daily results into new cuts.
 
 [About Reach](/reach)
+
+### Instant
+
+Make TV versions of your own videos yourself, with our craft built in. In early access.
+
+[About Instant](/instant)
 
 ## Selected ads {.featured}
 

@@ -9,8 +9,16 @@ jsonld: [
   {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": "https://www.screenbridge.tv/#organization",
     "name": "Screenbridge",
+    "legalName": "Screenbridge Inc.",
     "url": "https://www.screenbridge.tv/",
+    "sameAs": [
+      "https://www.linkedin.com/company/screenbridge",
+      "https://www.instagram.com/screenbridge.tv/",
+      "https://reach.screenbridge.tv",
+      "https://www.filmkraft.tv"
+    ],
     "logo": "https://www.screenbridge.tv/images/OpengraphScreenbridge.png",
     "email": "info@screenbridge.tv",
     "description": "Screenbridge is a New York video agency that makes UGC-style TV ads and runs them on CTV.",
@@ -19,7 +27,7 @@ jsonld: [
     "founder": [
       { "@type": "Person", "name": "Dmitry Trakovsky", "jobTitle": "Co-Founder & CEO" },
       { "@type": "Person", "name": "Paloma Veinstein", "jobTitle": "Co-Founder & Creative Director" },
-      { "@type": "Person", "name": "Timothy Lalonde", "jobTitle": "Co-Founder & Head of Growth" }
+      { "@type": "Person", "name": "Timothy Lalonde", "jobTitle": "Co-Founder & CMO" }
     ],
     "knowsAbout": ["Connected TV advertising", "UGC-style video ads", "CTV media buying"]
   }
@@ -74,7 +82,7 @@ Co-Founder & Creative Director
 
 ![Timothy Lalonde](/images/Tim.png)
 
-Co-Founder & Head of Growth
+Co-Founder & CMO
 
 ### Dasha Khritankova
 
