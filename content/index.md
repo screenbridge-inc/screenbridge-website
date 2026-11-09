@@ -16,7 +16,11 @@ jsonld: [
     "url": "https://www.screenbridge.tv/",
     "about": {
       "@type": "Organization",
+      "@id": "https://www.screenbridge.tv/#organization",
       "name": "Screenbridge",
+      "legalName": "Screenbridge Inc.",
+      "url": "https://www.screenbridge.tv/",
+      "address": { "@type": "PostalAddress", "addressLocality": "New York", "addressRegion": "NY", "addressCountry": "US" },
       "description": "Screenbridge transforms social videos into premium ads that perform. Perfect for TV, CTV, YouTube, Amazon, OLV and beyond.",
       "logo": {
         "@type": "ImageObject",
@@ -24,7 +28,10 @@ jsonld: [
       },
       "email": "info@screenbridge.tv",
       "sameAs": [
-        "mailto:hello@screenbridge.tv"
+        "https://www.linkedin.com/company/screenbridge",
+        "https://www.instagram.com/screenbridge.tv/",
+        "https://reach.screenbridge.tv",
+        "https://www.filmkraft.tv"
       ],
       "review": [
         {
@@ -42,6 +49,14 @@ jsonld: [
         }
       ]
     }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://www.screenbridge.tv/#website",
+    "name": "Screenbridge",
+    "url": "https://www.screenbridge.tv/",
+    "publisher": { "@id": "https://www.screenbridge.tv/#organization" }
   }
 ]
 ---

@@ -1,5 +1,5 @@
 ---
-title: "Work"
+title: "CTV Ad Examples: UGC-Style TV Ads We Made | Screenbridge"
 description: "See how top brands transform UGC into premium CTV ads with Screenbridge. Browse our portfolio of Standard, Premium, and Signature commercials."
 canonical: https://www.screenbridge.tv/work
 ogImage: https://www.screenbridge.tv/images/OpengraphScreenbridge.png
@@ -30,7 +30,7 @@ jsonld: [
 ---
 Work {.eyebrow}
 
-# Real UGC transformed into CTV ads.
+# CTV ad examples: UGC-style TV ads we made for brands.
 
 Browse Standard, Premium and Signature ads made from real creator content.
 

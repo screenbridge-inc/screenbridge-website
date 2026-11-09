@@ -9,8 +9,16 @@ jsonld: [
   {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": "https://www.screenbridge.tv/#organization",
     "name": "Screenbridge",
+    "legalName": "Screenbridge Inc.",
     "url": "https://www.screenbridge.tv/",
+    "sameAs": [
+      "https://www.linkedin.com/company/screenbridge",
+      "https://www.instagram.com/screenbridge.tv/",
+      "https://reach.screenbridge.tv",
+      "https://www.filmkraft.tv"
+    ],
     "logo": "https://www.screenbridge.tv/images/OpengraphScreenbridge.png",
     "email": "info@screenbridge.tv",
     "description": "Screenbridge is a New York video agency that makes UGC-style TV ads and runs them on CTV.",
